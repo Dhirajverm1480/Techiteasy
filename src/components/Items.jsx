@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Items = ({id, image, title, price}) => {
   
   return (
-    <Link to={`/products/${id}`} className='cursor-pointer shadow p-2 rounded'>
+    <Link to={`/productDetails/${id}`} className='cursor-pointer shadow p-2 rounded'>
       <div className='overflow-hidden'>
         <img className='hover:scale-110 transition ease-in-out w-40 h-36' src={image && image[0]} alt={title} />
       </div>

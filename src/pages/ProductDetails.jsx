@@ -24,7 +24,7 @@ const Product = () => {
     fetchProductData()
   }, [products, productId])
   return productData ? (
-    <div className='page-frame bg-red-200 xl:h-screen transition-opacity ease-in duration-500 opacity-100'>
+    <div className='page-frame xl:h-screen transition-opacity ease-in duration-500 opacity-100'>
       {/* Product Data */}
       <div className='flex gap-12 sm:gap-12 flex-col sm:flex-row '>
         {/* Product Image */}
@@ -51,7 +51,7 @@ const Product = () => {
           <p className='mt-5 text-gray-500 md:w-4/5'>{'Brand: '}{productData.brand}</p>
           <p className='mt-5 text-gray-500 md:w-4/5'>{'Model: '}{productData.model}</p>
           
-          <button onClick={() => addToCart(productData._id)} className='bg-black text-white px-8 py-3 text-sm active:bg-gray-700'>Add To Cart</button>
+          <button onClick={() => addToCart(productData._id)} className='bg-black text-white px-8 py-3 mt-1 text-sm active:bg-gray-700 hover:bg-white hover:text-black border border-black rounded'>Add To Cart</button>
           <hr className='mt-8 sm:w-4/5 ' />
           {/* <div className='text-sm text-gray-500 mt-5 flex flex-col gap-1'>
             <p></p>
