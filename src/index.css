@@ -1,0 +1,19 @@
+@import "tailwindcss";
+/* @tailwind base; */
+/* @tailwind components; */
+/* @tailwind utilities; */
+
+.active{
+    color: red;
+    border-bottom: 1px solid red;
+}
+
+#hero{
+    background-image:linear-gradient(#0000006c,#0000006c), url(./assets/banner1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.page-frame{
+    @apply w-full p-5
+}
