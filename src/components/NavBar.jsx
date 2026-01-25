@@ -15,7 +15,7 @@ const NavBar = () => {
   const { setShowSearch, getCartCount } = useContext(ShopContext)
 
   return (
-    <header className="sticky top-0">
+    <header className="sticky top-0 px-[2%]">
       <div className='flex justify-between items-center px-3 py-2 bg-white'>
         <Link to={`/`}><img className='w-10 cursor-pointer' src={Icon} alt="" /></Link>
         <ul className='hidden sm:flex gap-5 text-sm'>

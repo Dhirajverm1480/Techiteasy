@@ -37,7 +37,7 @@ const App = () => {
           <Route path='/order' element={<Orders />} />
         </Routes>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }
