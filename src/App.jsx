@@ -22,7 +22,7 @@ const App = () => {
       <NavBar />
       <SearchBar />
       <hr />
-      <div>
+      <div className='px-[1%]'>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
