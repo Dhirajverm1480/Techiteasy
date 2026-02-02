@@ -1,7 +1,4 @@
 @import "tailwindcss";
-/* @tailwind base; */
-/* @tailwind components; */
-/* @tailwind utilities; */
 
 .active{
     color: red;
@@ -15,5 +12,5 @@
 }
 
 .page-frame{
-    @apply w-full p-5
+    @apply w-full p-5;
 }

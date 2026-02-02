@@ -1,4 +1,3 @@
-import React from 'react'
 import NavBar from './components/NavBar'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
@@ -21,8 +20,8 @@ const App = () => {
     <div>
       <NavBar />
       <SearchBar />
-      <hr />
-      <div className='px-[1%]'>
+      {/* <hr /> */}
+      <main>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
@@ -36,7 +35,7 @@ const App = () => {
           <Route path='/place-order' element={<PlaceOrder />} />
           <Route path='/order' element={<Orders />} />
         </Routes>
-      </div>
+      </main>
       {/* <Footer /> */}
     </div>
   )

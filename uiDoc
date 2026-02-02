@@ -1,0 +1,1184 @@
+Nice 👌 e-commerce + React is a solid combo. An **impactful home page** isn’t about flashy UI alone—it’s about **clarity, trust, and conversion**. I’ll break this down in a **practical, React-friendly way**.
+
+---
+
+## 1️⃣ Core Goal of Your Home Page
+
+Your home page should answer **in 5 seconds**:
+
+* What do you sell?
+* Why should I trust you?
+* What should I click next?
+
+If it does that, you’re winning.
+
+---
+
+## 2️⃣ High-Impact Home Page Structure (Proven Layout)
+
+### 🔹 1. Hero Section (Above the Fold)
+
+**Most important part.**
+
+* Big headline (value proposition)
+* Supporting line
+* Primary CTA button
+
+**Example:**
+
+```txt
+Premium Streetwear for Everyday Comfort
+Shop the latest trends at unbeatable prices
+[ Shop Now ]
+```
+
+**Tips**
+
+* Avoid generic text like *“Welcome to our store”*
+* Use a clean background image or subtle gradient
+* CTA should stand out (contrasting color)
+
+---
+
+### 🔹 2. Categories / Collections
+
+Help users explore fast.
+
+**Layout ideas:**
+
+* 3–6 category cards
+* Each card clickable
+
+```js
+Men | Women | Electronics | Accessories | Sale
+```
+
+👉 Use **grid + hover effects** (scale, shadow)
+
+---
+
+### 🔹 3. Featured / Trending Products
+
+Show social proof + popular items.
+
+**Best practices**
+
+* 4–8 products max
+* Product image
+* Name + price
+* “Add to Cart” or “View”
+
+In React:
+
+* Fetch products
+* Filter by `featured: true`
+
+---
+
+### 🔹 4. Why Choose Us (Trust Builder)
+
+This is HUGE for conversion.
+
+Examples:
+
+* 🚚 Free Shipping
+* 🔄 Easy Returns
+* 🔐 Secure Payments
+* ⭐ Trusted by 10,000+ Customers
+
+Keep it short. Icons help a lot.
+
+---
+
+### 🔹 5. Promotional Banner
+
+Highlight offers:
+
+* “Flat 30% Off”
+* “New Arrivals”
+* “Limited Time Deal”
+
+👉 Use urgency but don’t overdo it.
+
+---
+
+### 🔹 6. Testimonials / Reviews
+
+People trust people.
+
+Simple format:
+
+```txt
+★★★★★
+“Great quality and fast delivery!”
+– Alex
+```
+
+Even 2–3 reviews help.
+
+---
+
+### 🔹 7. Newsletter / CTA Section
+
+Capture emails early.
+
+```txt
+Get 10% off your first order
+[ Enter Email ] [ Subscribe ]
+```
+
+---
+
+## 3️⃣ React Component Breakdown (Clean Architecture)
+
+```txt
+HomePage
+ ├── Hero
+ ├── Categories
+ ├── FeaturedProducts
+ ├── WhyChooseUs
+ ├── PromoBanner
+ ├── Testimonials
+ └── Newsletter
+```
+
+💡 Each section = **separate reusable component**
+
+---
+
+## 4️⃣ UI / UX Tips (This Matters More Than You Think)
+
+### ✅ Do this
+
+* Mobile-first design
+* Large clickable buttons
+* Skeleton loaders while fetching data
+* Lazy load images
+
+### ❌ Avoid this
+
+* Too many products
+* Too many fonts/colors
+* Long text blocks
+
+---
+
+## 5️⃣ Tech Stack Suggestions (Optional but Powerful)
+
+* **CSS**: Tailwind / SCSS / Styled Components
+* **Animations**: Framer Motion (clean & subtle)
+* **Icons**: React Icons
+* **State**: Context API / Redux (for cart)
+* **SEO**: React Helmet
+
+---
+
+## 6️⃣ What Makes a Home Page “Impactful”
+
+✔ Clear value proposition
+✔ Fast load time
+✔ Strong CTAs
+✔ Trust elements
+✔ Clean design
+
+If you want, I can:
+
+* Design a **home page wireframe**
+* Write **React JSX for a Home Page**
+* Suggest **color schemes**
+* Review your current home page idea
+
+Just tell me 👇
+
+
+
+Perfect 👍 let’s do this clean and practical. I’ll give you **(1) a visual wireframe layout** and **(2) color schemes you can directly use in your React app**.
+
+---
+
+## 1️⃣ Home Page Wireframe (Text + Visual Layout)
+
+Think of this as a **blueprint** for your components.
+
+---
+
+### 🔝 HEADER / NAVBAR (Sticky)
+
+```
+-------------------------------------------------
+ LOGO        Home  Shop  Categories  About  Cart
+-------------------------------------------------
+```
+
+* Logo on left
+* Navigation center/right
+* Cart icon with badge
+* Optional search icon
+
+---
+
+### 🟦 HERO SECTION (Above the Fold)
+
+```
+-------------------------------------------------
+|  BIG HEADLINE TEXT                            |
+|  Short supporting line                        |
+|                                              |
+|  [ Shop Now ]   [ Explore ]                   |
+|                                              |
+|              HERO IMAGE                       |
+-------------------------------------------------
+```
+
+**Purpose**
+
+* Instantly explain what you sell
+* Push user to action
+
+---
+
+### 🗂 CATEGORY SECTION
+
+```
+-------------------------------------------------
+|  Shop by Category                             |
+|                                               |
+| [ Men ]   [ Women ]   [ Shoes ]   [ Sale ]    |
+-------------------------------------------------
+```
+
+**Design**
+
+* Card style
+* Image + category name
+* Hover effect (zoom/shadow)
+
+---
+
+### 🔥 FEATURED PRODUCTS
+
+```
+-------------------------------------------------
+|  Trending Products                            |
+|                                               |
+| [Img] Name  $Price   [Add]                    |
+| [Img] Name  $Price   [Add]                    |
+| [Img] Name  $Price   [Add]                    |
+| [Img] Name  $Price   [Add]                    |
+-------------------------------------------------
+```
+
+**Tips**
+
+* Grid: 4 columns desktop / 2 tablet / 1 mobile
+* Add “View All” link
+
+---
+
+### ⭐ TRUST / WHY CHOOSE US
+
+```
+-------------------------------------------------
+| 🚚 Free Shipping   🔐 Secure Pay   🔄 Returns |
+-------------------------------------------------
+```
+
+Simple. Clean. Reassuring.
+
+---
+
+### 🎯 PROMO BANNER
+
+```
+-------------------------------------------------
+|  LIMITED TIME OFFER                           |
+|  Get 30% OFF on New Arrivals                  |
+|           [ Shop Now ]                        |
+-------------------------------------------------
+```
+
+Use contrasting color.
+
+---
+
+### 💬 TESTIMONIALS
+
+```
+-------------------------------------------------
+|  What Customers Say                           |
+|                                               |
+| ★★★★★  "Amazing quality!"                    |
+| ★★★★★  "Fast delivery!"                      |
+-------------------------------------------------
+```
+
+---
+
+### 📩 NEWSLETTER
+
+```
+-------------------------------------------------
+|  Get 10% OFF Your First Order                 |
+|  [ Email Address ]   [ Subscribe ]            |
+-------------------------------------------------
+```
+
+---
+
+### 🔚 FOOTER
+
+```
+-------------------------------------------------
+| Logo | About | Support | Social Icons         |
+-------------------------------------------------
+```
+
+---
+
+## 2️⃣ Suggested Color Schemes (Choose One)
+
+### 🎨 OPTION 1: Modern & Trustworthy (Best for Most Stores)
+
+**Use if you want clean + professional**
+
+* Primary: `#1E40AF` (Deep Blue)
+* Secondary: `#F59E0B` (Amber)
+* Background: `#F9FAFB`
+* Text: `#111827`
+* Muted Text: `#6B7280`
+* CTA Button: Amber on Blue
+
+👉 Great for electronics, general stores
+
+---
+
+### 🎨 OPTION 2: Minimal & Premium
+
+**Use if you want Apple-like feel**
+
+* Primary: `#000000`
+* Secondary: `#FFFFFF`
+* Accent: `#E5E7EB`
+* Text: `#111827`
+* CTA Button: Black with white text
+
+👉 Great for fashion & luxury products
+
+---
+
+### 🎨 OPTION 3: Youthful & Energetic
+
+**Use if your audience is young**
+
+* Primary: `#7C3AED` (Purple)
+* Secondary: `#EC4899` (Pink)
+* Background: `#FDF4FF`
+* Text: `#1F2937`
+* CTA Button: Pink or Purple gradient
+
+👉 Great for streetwear, lifestyle brands
+
+---
+
+### 🎨 OPTION 4: Nature / Eco Brand
+
+**Use if selling organic or eco products**
+
+* Primary: `#166534` (Green)
+* Secondary: `#65A30D`
+* Background: `#F0FDF4`
+* Text: `#14532D`
+* CTA Button: Dark Green
+
+---
+
+## 3️⃣ Pro UI Tip (Don’t Skip This)
+
+* Use **1 primary color**
+* Use **1 accent color**
+* Use **neutral background**
+* Consistency > creativity
+
+---
+
+If you want next:
+
+* I can convert this wireframe into **React components**
+* Build a **Tailwind CSS layout**
+* Suggest **font combinations**
+* Create a **mobile-first version**
+
+Tell me your **product type** (fashion, electronics, general store) and I’ll refine it even more 🚀
+
+
+
+
+
+Great questions 👌 these are **core UI/UX concepts**, and once you get them, your designs instantly level up. I’ll explain them **simply, with examples**, no fluff.
+
+---
+
+## 1️⃣ What is CTA?
+
+**CTA = Call To Action**
+
+It’s **the action you want the user to take**.
+
+### Examples of CTAs
+
+* 🛒 **Shop Now**
+* ➕ **Add to Cart**
+* 🔍 **View Product**
+* 📩 **Subscribe**
+* 🔐 **Sign In**
+
+### Why CTA is important
+
+* It **guides users**
+* It **increases conversions**
+* Without CTA → users feel lost
+
+### CTA in UI
+
+A CTA is usually:
+
+* A **button**
+* High contrast
+* Clearly visible
+* Short text (1–3 words)
+
+✅ Good CTA:
+
+```txt
+[ Shop Now ]   (bright color, big size)
+```
+
+❌ Bad CTA:
+
+```txt
+Click here to view our amazing products
+```
+
+---
+
+## 2️⃣ What does “Subtle” mean in UI?
+
+**Subtle = not loud, not distracting**
+
+It supports content instead of stealing attention.
+
+### Subtle examples
+
+* Soft shadows
+* Light hover effects
+* Gentle animations
+* Muted colors
+
+❌ Not subtle:
+
+* Neon colors everywhere
+* Heavy shadows
+* Aggressive animations
+
+---
+
+## 3️⃣ What is a Subtle Gradient?
+
+A **subtle gradient** is a **very smooth color transition**.
+
+Instead of:
+
+```txt
+Blue → Pink (very strong)
+```
+
+You use:
+
+```txt
+Light Blue → Slightly darker Blue
+```
+
+### Example CSS
+
+```css
+background: linear-gradient(
+  to right,
+  #1E40AF,
+  #2563EB
+);
+```
+
+Why use it?
+
+* Adds depth
+* Feels modern
+* Doesn’t hurt readability
+
+💡 Best places for gradients:
+
+* Hero section
+* CTA buttons
+* Promo banners
+
+---
+
+## 4️⃣ Color Roles Explained (SUPER IMPORTANT)
+
+### 🎯 Primary Color
+
+This is your **main brand color**.
+
+Used for:
+
+* CTA buttons
+* Active links
+* Highlights
+
+Example:
+
+```txt
+Shop Now button
+```
+
+👉 You should have **only one primary color**
+
+---
+
+### 🎯 Secondary Color
+
+Supports the primary color.
+
+Used for:
+
+* Secondary buttons
+* Icons
+* Highlights
+
+Example:
+
+```txt
+Explore | View More
+```
+
+It should **not compete** with primary.
+
+---
+
+### 🎯 Accent Color
+
+Used **sparingly** to draw attention.
+
+Used for:
+
+* Sale badges
+* Discounts
+* Notifications
+* Cart count badge
+
+Example:
+
+```txt
+SALE 🔥
+```
+
+⚠️ Overusing accent color ruins impact.
+
+---
+
+### 🎯 Background Color
+
+The base color behind everything.
+
+Usually:
+
+* White
+* Off-white
+* Very light gray
+
+Example:
+
+```txt
+Page background
+```
+
+Keeps things clean and readable.
+
+---
+
+### 🎯 What is a Neutral Background?
+
+A **neutral background** is a background color that **doesn’t draw attention**.
+
+Common neutral colors:
+
+* `#FFFFFF` (White)
+* `#F9FAFB` (Light gray)
+* `#F3F4F6` (Soft gray)
+
+Why use neutral background?
+
+* Content stands out
+* Colors pop more
+* Reduces eye strain
+* Looks professional
+
+💡 Neutral ≠ boring
+It’s intentional calm.
+
+---
+
+## 5️⃣ Simple Real Example (E-commerce)
+
+```txt
+Background: Light Gray
+Product Cards: White
+Primary Color: Blue (Shop Now)
+Secondary: Gray (View Details)
+Accent: Red (SALE badge)
+```
+
+User eyes go like this:
+👉 CTA → Product → Price → Sale badge
+
+That’s good design.
+
+---
+
+## 6️⃣ One Golden Rule (Remember This)
+
+> **If everything is highlighted, nothing is highlighted.**
+
+Use colors with purpose.
+
+---
+
+If you want next:
+
+* I can **pick a full color palette** for your store
+* Explain **hover states & button hierarchy**
+* Show **bad vs good UI examples**
+* Explain **typography (fonts)** simply
+
+Just say the word 😄
+
+
+
+
+
+<!-- TypoGraphy and some color pallete -->
+
+Love it — this is exactly the right order to learn UI 👍
+I’ll keep this **simple, practical, and memorable**.
+
+---
+
+## 1️⃣ Font Suggestions (Safe + Professional)
+
+### ✅ Best Fonts for E-commerce (Google Fonts)
+
+### 🔹 **Poppins** (Highly Recommended)
+
+* Clean
+* Modern
+* Great readability
+* Looks good on buttons & headings
+
+**Use for:** Headings + Buttons
+
+```css
+font-family: 'Poppins', sans-serif;
+```
+
+---
+
+### 🔹 **Inter** (Best for body text)
+
+* Designed for screens
+* Very readable
+* Used by many modern apps
+
+**Use for:** Paragraphs, product descriptions
+
+```css
+font-family: 'Inter', sans-serif;
+```
+
+---
+
+### ⭐ Best Combo (Pro Choice)
+
+```txt
+Headings: Poppins
+Body Text: Inter
+```
+
+This combo is extremely common in real e-commerce sites.
+
+---
+
+## 2️⃣ Typography Explained (Very Simple)
+
+### What is Typography?
+
+Typography = **how text looks and feels** on your website.
+
+It includes:
+
+* Font type
+* Font size
+* Font weight
+* Spacing
+
+Good typography = easy to read + looks premium.
+
+---
+
+## 3️⃣ Typography Basics You MUST Know
+
+### 🔹 Font Hierarchy (Most Important)
+
+Not all text should look the same.
+
+Example:
+
+```txt
+H1 → Big & Bold (Hero heading)
+H2 → Section titles
+H3 → Product names
+Body → Descriptions
+Small → Price notes, labels
+```
+
+If everything is same size → user gets confused.
+
+---
+
+### 🔹 Font Weight
+
+Controls thickness of text.
+
+```txt
+300 – Light
+400 – Regular
+500 – Medium
+600 – Semi-bold
+700 – Bold
+```
+
+**Best practice**
+
+* Headings: 600–700
+* Body text: 400–500
+* Buttons: 500–600
+
+---
+
+### 🔹 Line Height (Huge for readability)
+
+Too tight = bad
+Too loose = messy
+
+Best rule:
+
+```css
+line-height: 1.5;
+```
+
+---
+
+### 🔹 Font Size Guide (Desktop)
+
+```txt
+Hero Heading: 40–48px
+Section Heading: 24–32px
+Body Text: 16–18px
+Buttons: 14–16px
+```
+
+Mobile → slightly smaller.
+
+---
+
+## 4️⃣ Typography Golden Rules
+
+✔ Max **2 fonts only**
+✔ Keep body text simple
+✔ Use bold for emphasis, not color
+✔ Consistency everywhere
+
+---
+
+## 5️⃣ Full Color Palette (Ready to Use)
+
+### 🎨 Modern & Trustworthy (Recommended)
+
+#### 🔵 Primary
+
+```txt
+#2563EB  (Blue)
+```
+
+#### 🟡 Secondary
+
+```txt
+#F59E0B  (Amber)
+```
+
+#### 🔴 Accent
+
+```txt
+#EF4444  (Red)
+```
+
+#### ⚪ Background (Neutral)
+
+```txt
+#F9FAFB  (Light Gray)
+```
+
+#### 🧱 Card / Surface
+
+```txt
+#FFFFFF  (White)
+```
+
+#### ✍ Text Colors
+
+```txt
+Primary Text: #111827
+Secondary Text: #6B7280
+```
+
+---
+
+## 6️⃣ How This Palette Is Used (Real Example)
+
+```txt
+Background → Light Gray
+Cards → White
+Headings → Dark Text
+CTA Button → Blue
+Secondary Button → Amber
+SALE Badge → Red
+```
+
+User attention flows naturally to **CTA first**.
+
+---
+
+## 7️⃣ One Pro Tip (Bookmark This)
+
+> Fonts affect trust more than colors.
+
+Bad font = unprofessional
+Good font = instant credibility
+
+---
+
+If you want next:
+
+* Tailwind config for fonts & colors
+* Button styles (primary vs secondary)
+* Mobile typography rules
+* Accessibility tips (contrast & font size)
+
+Just tell me 🚀
+
+
+Nice, this is a solid design-system starter pack. I’ll break it into **practical Tailwind config + usage patterns**, not just theory.
+
+---
+
+## 1. Tailwind config: fonts & colors
+
+**`tailwind.config.js`**
+
+```js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/**/*.{js,ts,jsx,tsx,html}"],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"],
+        heading: ["Poppins", "system-ui", "sans-serif"],
+        mono: ["JetBrains Mono", "monospace"],
+      },
+      colors: {
+        brand: {
+          50:  "#eef2ff",
+          100: "#e0e7ff",
+          500: "#6366f1", // primary
+          600: "#4f46e5",
+          700: "#4338ca",
+        },
+        neutral: {
+          50:  "#fafafa",
+          100: "#f5f5f5",
+          400: "#a3a3a3",
+          700: "#404040",
+          900: "#171717",
+        },
+        success: "#16a34a",
+        danger: "#dc2626",
+      },
+    },
+  },
+  plugins: [],
+};
+```
+
+**Usage**
+
+```html
+<h1 class="font-heading text-brand-700">Title</h1>
+<p class="font-sans text-neutral-700">Body text</p>
+```
+
+💡 Tip: keep **brand colors limited** (1 primary, 1 accent). Everything else should be neutral.
+
+---
+
+## 2. Button styles (primary vs secondary)
+
+### Base button pattern
+
+Create a reusable mental model:
+
+```html
+<button class="btn btn-primary">Primary</button>
+<button class="btn btn-secondary">Secondary</button>
+```
+
+### Tailwind classes
+
+```css
+/* globals.css */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium
+           transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply bg-brand-600 text-white hover:bg-brand-700
+           focus:ring-brand-600 disabled:bg-brand-300;
+  }
+
+  .btn-secondary {
+    @apply bg-neutral-100 text-neutral-900 hover:bg-neutral-200
+           focus:ring-neutral-400 disabled:text-neutral-400;
+  }
+}
+```
+
+**Design rules**
+
+* **Primary**: main action per screen (1 max)
+* **Secondary**: alternative or cancel action
+* Avoid “ghost buttons” for critical actions on mobile
+
+---
+
+## 3. Mobile typography rules (this matters more than desktop)
+
+### Font sizes (mobile-first)
+
+```html
+<h1 class="text-2xl sm:text-3xl font-heading">Heading</h1>
+<h2 class="text-xl sm:text-2xl font-heading">Subheading</h2>
+<p class="text-base sm:text-lg leading-relaxed">
+  Body text optimized for mobile readability
+</p>
+```
+
+### Recommended scale (mobile)
+
+| Type  | Size               |
+| ----- | ------------------ |
+| Body  | `text-base` (16px) |
+| Small | `text-sm` (14px)   |
+| H1    | `text-2xl` (24px)  |
+| H2    | `text-xl` (20px)   |
+
+**Rules of thumb**
+
+* Never go below **14px** for body text
+* Increase **line-height**, not font size, for readability
+* Headings should be **shorter on mobile**
+
+---
+
+## 4. Accessibility tips (contrast & font size)
+
+### Color contrast
+
+* Text should meet **WCAG AA**
+
+  * Normal text: **4.5:1**
+  * Large text (≥18px or 14px bold): **3:1**
+* Avoid:
+
+  ```html
+  text-neutral-400 on bg-white ❌
+  ```
+
+Better:
+
+```html
+text-neutral-700 on bg-white ✅
+```
+
+### Focus states (don’t skip this)
+
+```html
+<button class="focus:ring-2 focus:ring-brand-600 focus:ring-offset-2">
+```
+
+### Touch targets (mobile!)
+
+* Minimum **44×44px**
+
+```html
+<button class="min-h-[44px] px-4">
+```
+
+### Font accessibility
+
+* Use **system fonts fallback**
+* Avoid ultra-thin weights (`font-thin`)
+* Prefer `font-medium` or `font-semibold` for buttons
+
+---
+
+## TL;DR design system rules
+
+* **Fonts**: 1 body, 1 heading
+* **Colors**: 1 brand color, neutrals do the heavy lifting
+* **Buttons**: primary = rare & obvious
+* **Mobile first**: 16px body, generous spacing
+* **Accessibility**: contrast, focus rings, touch size
+
+If you want, I can:
+
+* Convert this into a **design-token file**
+* Add **dark mode**
+* Or generate a **full Tailwind component library** (buttons, inputs, cards)
+
+
+
+
+Ahh got it — you’re asking **how these colors are used when designing a website**, and whether there are **other color types** too. 👍
+Here’s a clear, practical way to think about it.
+
+---
+
+## 🌐 Website color roles (most common system)
+
+### 🎯 1. Primary color
+
+**Main brand color**
+
+* Used the **most**
+* Logo, main buttons, links, header, highlights
+
+**Example:** Blue for a Facebook-style site
+
+---
+
+### 🔁 2. Secondary color
+
+**Supports the primary**
+
+* Used for secondary buttons, icons, sections
+* Adds variety without stealing attention
+
+**Example:** Light blue or teal next to a main blue
+
+---
+
+### ⚪ 3. Neutral colors
+
+**Foundation / background**
+
+* Backgrounds, text, borders, cards
+* Keeps things readable and clean
+
+**Examples:**
+White (background), dark gray (text), light gray (borders)
+
+---
+
+### ✨ 4. Accent color
+
+**Attention grabber**
+
+* Used **sparingly**
+* Call-to-action buttons, alerts, badges
+
+**Example:** Orange “Sign Up” button on a blue website
+
+---
+
+## 🧠 Typical website color structure
+
+Most sites follow something like this:
+
+* **60% Neutral colors** → background & text
+* **25–30% Primary color** → main UI
+* **5–10% Accent color** → important actions
+
+---
+
+## ➕ Other useful color types in web design
+
+### 🚦 State / Semantic colors
+
+Used for meaning, not branding:
+
+* **Green** → success
+* **Red** → error
+* **Yellow** → warning
+* **Blue** → info
+
+Example: form validation messages
+
+---
+
+### 🌓 Light & dark variants
+
+Each main color often has:
+
+* Light version (hover, background)
+* Dark version (text, active states)
+
+Example:
+
+* Primary: Blue
+* Primary-light: Light blue
+* Primary-dark: Navy
+
+---
+
+## 🧩 Simple real example
+
+Let’s say you’re building a site:
+
+* **Primary:** #2563EB (Blue)
+* **Secondary:** #38BDF8 (Light Blue)
+* **Accent:** #F97316 (Orange)
+* **Neutrals:** White, Gray-100, Gray-800
+* **Error:** Red
+* **Success:** Green
+
+That’s a **complete, professional color system**.
+
+---
+
+If you want, tell me:
+
+* what kind of site (portfolio, e-commerce, dashboard, blog, SaaS)
+* light or dark mode
+* target audience
+
+I can suggest an actual color palette for you 🎨🚀

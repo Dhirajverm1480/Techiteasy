@@ -1,4 +1,3 @@
-// import React from 'react'
 import { Link, NavLink } from "react-router-dom"
 import Icon from '../assets/Icon.png'
 import Gears from '../assets/icons/Gears.png'
@@ -15,9 +14,10 @@ const NavBar = () => {
   const { setShowSearch, getCartCount } = useContext(ShopContext)
 
   return (
-    <header className="sticky top-0 px-[2%]">
-      <div className='flex justify-between items-center px-3 py-2 bg-white'>
-        <Link to={`/`}><img className='w-10 cursor-pointer' src={Icon} alt="" /></Link>
+    <header className="sticky top-0 z-1000 px-[2%]">
+      <div className='flex justify-between items-center px-3 py-2'>
+        {/* <Link to={`/`}><img className='w-10 cursor-pointer' src={Icon} alt="" /></Link> */}
+        <Link to={`/`}><p className="text-2xl sm:text-3xl font-bold">TechItEasy</p></Link>
         <ul className='hidden sm:flex gap-5 text-sm'>
           <NavLink to='/'>
             <p>Home</p>
@@ -36,18 +36,18 @@ const NavBar = () => {
           </NavLink> */}
         </ul>
         <div className='flex gap-4 items-center'>
-          {/* <div className='flex justify-center items-center rounded-xl'>
+          <div className='flex justify-center items-center rounded-xl'>
             <img onClick={() => setShowSearch(true)} className='p-1 cursor-pointer' src={SearchPng} alt="" />
-          </div> */}
-          {/* <NavLink to='/login'>
+          </div>
+          <NavLink to='/login'>
             <p className='bg-orange-400 py-1 px-2 rounded'>Login</p>
-          </NavLink> */}
+          </NavLink>
           <Link to='/cart' className='relative'>
             <img className='w-5 min-w-5' src={CartImg} alt="" />
-            {/* <p className='absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-red-300 text-white aspect-square rounded-full text-[8px]'>{getCartCount()}</p> */}
+            <p className='absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-red-300 text-white aspect-square rounded-full text-[8px]'>{getCartCount()}</p>
           </Link>
           <div className='group relative'>
-            {/* <img className='cursor-pointer' src={Gears} alt="" /> */}
+            <img className='cursor-pointer' src={Gears} alt="" />
             <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-4'>
               <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 rounded'>
                 <p className='cursor-pointer hover:text-black border-b'>Mode</p>
