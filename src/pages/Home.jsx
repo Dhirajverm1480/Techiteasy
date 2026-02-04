@@ -4,10 +4,10 @@ import ProductSections from "../components/ProductSections";
 const Home = () => {
   return (
     <>
-      <section className="relative min-h-screen flex items-end bg-[#dddff8] -z-4">
-        {/* #aeb5cf, #dddff8 */}
+      <section className="relative min-h-screen flex flex-col sm:flex-row justify-end sm:items-end bg-[#dddff8] -z-4 pb-[4%] sm:p-0">
+        {/* #aeb5cf, #dddff8 #b0b6d0*/}
         <Hero />
-        <div className="w-full sm:w-[50%] px-[4%] mb-[6%]">
+        <div className="w-full sm:w-[60%] px-[4%] mb-[6%]">
           <header>
             <h1 className="text-4xl sm:text-6xl font-bold">
               Tech for Every Mind That Loves to Level Up
@@ -19,11 +19,13 @@ const Home = () => {
               that make every moment better.
             </p>
           </header>
+        </div>
+        <div className="w-full sm:w-[40%] mb-[6%] px-[4%] flex sm:justify-end">
           <div className="my-6">
-            <a href="#" className="border rounded p-2 mr-3">
+            <a href="#" className="w-full border rounded p-3 mr-3 font-bold hover:bg-black hover:text-white cursor-pointer">
               Shop Now
             </a>
-            <a href="#" className="border rounded p-2 mr-3">
+            <a href="#" className="w-full rounded p-3 mr-3 bg-black text-white font-bold hover:bg-transparent hover:text-black">
               Explore More
             </a>
           </div>

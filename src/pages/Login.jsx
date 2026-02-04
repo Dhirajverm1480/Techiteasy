@@ -4,7 +4,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const Login = () => {
-  const [currentStatus, setCurrentStatus] = useState("Sign Up");
+  const [currentStatus, setCurrentStatus] = useState("Login");
   const { token, setToken, navigate, backendUrl } = useContext(ShopContext);
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -20,7 +20,7 @@ const Login = () => {
           backendUrl + "/api/v1/users/register",
           { name, email, username, password, phonenumber },
         );
-        consol.log("User Response : ", response.data);
+        console.log("User Response : ", response.data);
         if (response.data.success) {
           setToken(response.data.token);
           localStorage.setItem(response.data.token);
