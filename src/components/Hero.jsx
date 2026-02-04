@@ -2,7 +2,7 @@ import React from "react";
 
 export const Hero = () => {
   return (
-      <div className="absolute -top-14 -z-50 overflow-hidden">
+      <div className="absolute top-0 sm:-top-14 -z-50 overflow-hidden">
         <video
           src="https://framerusercontent.com/assets/bVq4NvV5SkQBR0D7VqD3K4BXIdM.mp4"
           autoPlay

@@ -14,27 +14,26 @@ const NavBar = () => {
   const { setShowSearch, getCartCount } = useContext(ShopContext)
 
   return (
-    <header className="sticky top-0 z-1000 px-[2%]">
+    <header className="sticky top-0 z-1000 px-[4%]">
       <div className='flex justify-between items-center px-3 py-2'>
         {/* <Link to={`/`}><img className='w-10 cursor-pointer' src={Icon} alt="" /></Link> */}
-        <Link to={`/`}><p className="text-2xl sm:text-3xl font-bold">TechItEasy</p></Link>
         <ul className='hidden sm:flex gap-5 text-sm'>
           <NavLink to='/'>
             <p>Home</p>
           </NavLink>
-          {/* <NavLink to='/about'>
+          <NavLink to='/about'>
             <p>About</p>
-          </NavLink> */}
+          </NavLink>
           <NavLink to='/tech'>
             <p>Product</p>
           </NavLink>
-          {/* <NavLink to='/game'>
-            <p>Game</p>
+          <NavLink to='/contact'>
+            <p>Contact</p>
           </NavLink>
-          <NavLink to='/book'>
-            <p>Book</p>
-          </NavLink> */}
         </ul>
+
+        <Link to={`/`}><p className="text-2xl sm:text-3xl font-bold">TechItEasy</p></Link>
+
         <div className='flex gap-4 items-center'>
           <div className='flex justify-center items-center rounded-xl'>
             <img onClick={() => setShowSearch(true)} className='p-1 cursor-pointer' src={SearchPng} alt="" />

@@ -21,7 +21,7 @@ const App = () => {
       <NavBar />
       <SearchBar />
       {/* <hr /> */}
-      <main>
+      <main className='min-h-screen'>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
@@ -36,7 +36,7 @@ const App = () => {
           <Route path='/order' element={<Orders />} />
         </Routes>
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }
