@@ -21,11 +21,11 @@ const NavBar = () => {
           <NavLink to='/'>
             <p>Home</p>
           </NavLink>
-          <NavLink to='/about'>
-            <p>About</p>
-          </NavLink>
           <NavLink to='/tech'>
             <p>Product</p>
+          </NavLink>
+          <NavLink to='/about'>
+            <p>About</p>
           </NavLink>
           <NavLink to='/contact'>
             <p>Contact</p>
@@ -68,8 +68,8 @@ const NavBar = () => {
           </div>
           <NavLink onClick={() => setVisible(flase)} className='py-2 pl-6 border' to='/'> home</NavLink>
           <NavLink onClick={() => setVisible(flase)} className='py-2 pl-6 border' to='/about'> About</NavLink>
-          <NavLink onClick={() => setVisible(flase)} className='py-2 pl-6 border' to='/tech'>Tech</NavLink>
-          <NavLink onClick={() => setVisible(flase)} className='py-2 pl-6 border' to='/game'>Game</NavLink>
+          <NavLink onClick={() => setVisible(flase)} className='py-2 pl-6 border' to='/product'>Product</NavLink>
+          <NavLink onClick={() => setVisible(flase)} className='py-2 pl-6 border' to='/contact'>Contact</NavLink>
           <NavLink onClick={() => setVisible(flase)} className='py-2 pl-6 border' to='/book'>Book</NavLink>
         </div>
       </div>

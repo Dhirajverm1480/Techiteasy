@@ -3,7 +3,7 @@ import Items from "../components/Items";
 import { ShopContext } from "../contexts/ShopContext";
 import SideBar from "../components/SideBar";
 
-const Tech = () => {
+const Products = () => {
   const { products } = useContext(ShopContext);
   const [tectProduct, setTechProduct] = useState([]);
 
@@ -11,8 +11,8 @@ const Tech = () => {
     setTechProduct(products.slice());
   }, [products]);
   return (
-    <section className="px-[4%] flex border-t justify-between">
-      <div className="hidden md:block sticky top-14 h-fit w-full md:w-[20%] mr-2">
+    <section className="px-[4%] flex justify-between">
+      <div className="hidden md:block w-full md:w-[20%] mr-2">
         <SideBar />
       </div>
       <div>
@@ -30,9 +30,31 @@ const Tech = () => {
             />
           ))}
         </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6">
+          {tectProduct.map((item, index) => (
+            <Items
+              key={index}
+              id={item._id}
+              image={item.image}
+              title={item.title}
+              price={item.price}
+            />
+          ))}
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6">
+          {tectProduct.map((item, index) => (
+            <Items
+              key={index}
+              id={item._id}
+              image={item.image}
+              title={item.title}
+              price={item.price}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
 };
 
-export default Tech;
+export default Products;
