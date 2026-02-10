@@ -24,7 +24,7 @@ const SideBar = () => {
   };
 
   return (
-    <aside className="w-full sticky top-14 h-fit mb-4">
+    <aside className="w-full sticky top-14 h-fit">
       <div className="border my-3 px-4 py-3">
         <h2 className="font-bold text-lg">Filter</h2>
       </div>

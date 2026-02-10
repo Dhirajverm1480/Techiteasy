@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom"
-import Icon from '../assets/Icon.png'
+import Icon from '../assets/Icon.webp'
 import Gears from '../assets/icons/Gears.png'
 import CartImg from '../assets/icons/cart-regular-24.png'
 import SearchPng from '../assets/icons/search-regular-24.png'
@@ -14,7 +14,7 @@ const NavBar = () => {
   const { setShowSearch, getCartCount } = useContext(ShopContext)
 
   return (
-    <header className="sticky top-0 z-1000 px-[4%]">
+    <header className="sticky top-0 z-1000 px-[4%] backdrop-blur-3xl">
       <div className='flex justify-between items-center px-3 py-2'>
         {/* <Link to={`/`}><img className='w-10 cursor-pointer' src={Icon} alt="" /></Link> */}
         <ul className='hidden sm:flex gap-5 text-sm'>

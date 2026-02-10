@@ -21,6 +21,7 @@ const Product = () => {
       }
     });
   };
+  // console.log("Pro", productData)
 
   useEffect(() => {
     fetchProductData();
@@ -40,7 +41,7 @@ const Product = () => {
             }
           </div> */}
           <div className="w-full sm:w-[80%] mb-20">
-            <img className="w-[70%] h-96 cursor-pointer" src={image} alt="" />
+            <img className="w-[70%] h-96 cursor-pointer" src={image} alt={productData.title} />
           </div>
         </div>
         {/* -------Product Info------ */}
@@ -52,9 +53,9 @@ const Product = () => {
             {productData.price}
           </p>
           {/* <p className='mt-5 text-xl font-medium'>{productData.description}</p> */}
-          <Subtitle subtitle={productData.description} />
+          <Subtitle subtitle={productData.subtitle} />
 
-          <div>
+          <div className="border my-4 py-3">
             <button
               onClick={() => addToCart(productData._id)}
               className="bg-black text-white px-8 py-3 mt-1 text-sm active:bg-gray-700 hover:bg-white hover:text-black border border-black rounded"
@@ -62,9 +63,40 @@ const Product = () => {
               Add To Cart
             </button>
           </div>
-          <hr className="mt-8 sm:w-4/5 " />
+          {/* <hr className="mt-8 sm:w-4/5 " /> */}
+          <div>
+            <div>
+              <Subtitle
+                subtitle={"No extra costs at checkout, delivered to your door."}
+              />
+            </div>
+            <div>
+              <Subtitle subtitle={"Not Satisfied? Full refund, no hassle."} />
+            </div>
+          </div>
         </div>
       </div>
+      <hr />
+      <div className="w-full md:flex justify-between my-3">
+        <div className="w-full md:w-[55%] pr-4">
+          <Title title={"Description"} />
+          <p>{productData.description}</p>
+          <Title title={"Features"} />
+          <div>
+            {
+              productData.features.map((item, index) => (
+                <div key={index}>
+                  <p>{item}</p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+        <div className="sticky top-14 w-full md:w-[40%] my-3 py-3 h-fit">
+          <img src={image} alt={productData.title} />
+        </div>
+      </div>
+      <hr />
     </section>
   ) : (
     <div className="opacity-0"></div>

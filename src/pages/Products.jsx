@@ -11,7 +11,7 @@ const Products = () => {
     setTechProduct(products.slice());
   }, [products]);
   return (
-    <section className="px-[4%] flex justify-between">
+    <section className="px-[4%] flex justify-between mb-4">
       <div className="hidden md:block w-full md:w-[20%] mr-2">
         <SideBar />
       </div>
