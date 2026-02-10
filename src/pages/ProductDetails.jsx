@@ -40,8 +40,8 @@ const Product = () => {
               ))
             }
           </div>
-          <div className="w-full sm:w-[80%] mb-20">
-            <img className="w-[70%] h-96 cursor-pointer" src={image} alt={productData.title} />
+          <div className="w-full sm:w-[80%] md:mb-20">
+            <img className="w-full md:w-[70%] h-96 cursor-pointer" src={image} alt={productData.title} />
           </div>
         </div>
         {/* -------Product Info------ */}
@@ -56,7 +56,7 @@ const Product = () => {
           <div className="mt-3 mb-5 py-3">
             <button
               onClick={() => addToCart(productData._id)}
-              className="bg-black text-white px-8 py-3 mt-1 text-sm active:bg-gray-700 hover:bg-white hover:text-black border border-black rounded"
+              className="w-full bg-black text-white px-8 py-3 mt-1 text-sm active:bg-gray-700 hover:bg-white hover:text-black border border-black rounded"
             >
               Add To Cart
             </button>
@@ -82,18 +82,18 @@ const Product = () => {
           <p className="mb-5">{productData.description}</p>
           {/* <Title title={"Features"} /> */}
           <Subtitle subtitle={"Features"} />
-          <div>
+          <div className="pl-4">
             {
               productData.features.map((item, index) => (
                 <div key={index} className="flex gap-1">
-                  <span>-</span>
-                  <p>{item}</p>
+                  {/* <span>-</span> */}
+                  <li className="mb-1 text-sm">{item}</li>
                 </div>
               ))
             }
           </div>
         </div>
-        <div className="sticky top-14 w-full md:w-[40%] my-3 py-3 h-fit">
+        <div className="sticky top-14 w-full md:w-[40%] my-3 py-3 px-2 h-fit bg-[#f2f2f2] rounded-lg">
           <img src={image} alt={productData.title} />
         </div>
       </div>

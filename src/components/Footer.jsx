@@ -46,8 +46,7 @@ const Footer = () => {
         </div>
       </section>
       <hr />
-      {/* <h2>footer</h2>
-      <p>&copy; 2024 Your Company. All rights reserved.</p> */}
+      <p>&copy; 2024 Your Company. All rights reserved.</p>
     </footer>
   );
 };

@@ -7,7 +7,7 @@ const Home = () => {
       <section className="relative min-h-screen flex flex-col sm:flex-row justify-end sm:items-end bg-[#dddff8] -z-4 pb-[4%] sm:p-0">
         {/* #aeb5cf, #dddff8 #b0b6d0*/}
         <Hero />
-        <div className="w-full sm:w-[60%] page-frame mb-[6%]">
+        <div className="w-full sm:w-[60%] px-[4%] mb-[6%]">
           <header>
             <h1 className="text-4xl sm:text-6xl font-bold">
               Tech for Every Mind That Loves to Level Up
