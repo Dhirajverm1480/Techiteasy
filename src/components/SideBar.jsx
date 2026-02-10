@@ -38,7 +38,10 @@ const SideBar = () => {
         {visible.categories && (
           <div>
             {categories.map((item) => (
-              <div key={item._id} className="border-b flex px-4 py-3 cursor-pointer">
+              <div
+                key={item._id}
+                className="border-b flex px-4 py-3 cursor-pointer"
+              >
                 <input
                   type="checkbox"
                   checked={selectedCategories.includes(item._id)}

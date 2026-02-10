@@ -15,7 +15,7 @@ const ProductSections = () => {
   return (
     <>
       <section className='my-2 mx-3 p-2'>
-        <Title title={"BEST SELLER"} />
+        <Title title={"PRODUCT"} />
         <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6'>
           {
             latestProduct.map((item, index) => (

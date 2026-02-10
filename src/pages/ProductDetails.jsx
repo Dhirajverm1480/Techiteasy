@@ -33,29 +33,27 @@ const Product = () => {
       <div className="flex gap-12 sm:gap-12 flex-col sm:flex-row ">
         {/* Product Image */}
         <div className="flex-1 flex flex-col-reverse gap-3 sm:flex-row">
-          {/* <div className='flex sm:flex-col overflow-x-auto sm:overflow-y-scroll justify-between sm:justify-normal sm:w-[18.7%] w-full'>
+          <div className='flex sm:flex-col justify-between sm:justify-normal sm:w-[18.7%] w-full'>
             {
               productData.image.map((item, index) => (
-                <img src={item} key={index} className='w-[24%] sm:w-full sm:mb-3 flex-shrink-0 cursor-pointer' />
+                <img src={item} key={index} className='w-[20%] sm:w-full sm:mb-3 flex-shrink-0 cursor-pointer border rounded p-2' />
               ))
             }
-          </div> */}
+          </div>
           <div className="w-full sm:w-[80%] mb-20">
             <img className="w-[70%] h-96 cursor-pointer" src={image} alt={productData.title} />
           </div>
         </div>
         {/* -------Product Info------ */}
         <div className="flex-1">
-          {/* <h1 className='font-medium text-2xl mt-2'>{productData.title}</h1> */}
           <Title title={productData.title} />
-          <p className="mt-5 text-gray-500 text-lg md:w-4/5">
+          <Subtitle subtitle={productData.subtitle} />
+          <p className="mt-3 text-gray-500 text-lg md:w-4/5">
             {"Rs."}
             {productData.price}
           </p>
-          {/* <p className='mt-5 text-xl font-medium'>{productData.description}</p> */}
-          <Subtitle subtitle={productData.subtitle} />
 
-          <div className="border my-4 py-3">
+          <div className="mt-3 mb-5 py-3">
             <button
               onClick={() => addToCart(productData._id)}
               className="bg-black text-white px-8 py-3 mt-1 text-sm active:bg-gray-700 hover:bg-white hover:text-black border border-black rounded"
@@ -64,13 +62,14 @@ const Product = () => {
             </button>
           </div>
           {/* <hr className="mt-8 sm:w-4/5 " /> */}
-          <div>
-            <div>
+          <div  className="bg-[#f2f2f2] px-4 rounded-lg mb-6">
+            <div className="py-3">
               <Subtitle
                 subtitle={"No extra costs at checkout, delivered to your door."}
               />
             </div>
-            <div>
+            <hr />
+            <div className="py-3">
               <Subtitle subtitle={"Not Satisfied? Full refund, no hassle."} />
             </div>
           </div>
@@ -80,12 +79,14 @@ const Product = () => {
       <div className="w-full md:flex justify-between my-3">
         <div className="w-full md:w-[55%] pr-4">
           <Title title={"Description"} />
-          <p>{productData.description}</p>
-          <Title title={"Features"} />
+          <p className="mb-5">{productData.description}</p>
+          {/* <Title title={"Features"} /> */}
+          <Subtitle subtitle={"Features"} />
           <div>
             {
               productData.features.map((item, index) => (
-                <div key={index}>
+                <div key={index} className="flex gap-1">
+                  <span>-</span>
                   <p>{item}</p>
                 </div>
               ))
@@ -97,6 +98,13 @@ const Product = () => {
         </div>
       </div>
       <hr />
+      {/* <div className="bg-[#f2f2f2] p-5">
+        <Title title={"Product Reviews"} />
+      </div>
+      <hr />
+      <div>
+        <Title title={"You may also like"} />
+      </div> */}
     </section>
   ) : (
     <div className="opacity-0"></div>

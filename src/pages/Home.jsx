@@ -22,10 +22,16 @@ const Home = () => {
         </div>
         <div className="w-full sm:w-[40%] mb-[6%] px-[4%] flex sm:justify-end">
           <div className="my-6">
-            <a href="#" className="w-full border rounded p-3 mr-3 font-bold hover:bg-black hover:text-white cursor-pointer">
+            <a
+              href="#"
+              className="w-full border rounded p-3 mr-3 font-bold hover:bg-black hover:text-white cursor-pointer"
+            >
               Shop Now
             </a>
-            <a href="#" className="w-full rounded p-3 mr-3 bg-black text-white font-bold hover:bg-transparent hover:text-black">
+            <a
+              href="#"
+              className="w-full rounded p-3 mr-3 bg-black text-white font-bold hover:bg-transparent hover:text-black"
+            >
               Explore More
             </a>
           </div>

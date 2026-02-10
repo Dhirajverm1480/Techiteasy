@@ -6,4 +6,8 @@ const Title = ({title}) => {
   )
 }
 
+export const SecondaryTitle = ({title}) => {
+  return(<h2 className='text-[20px] font-bold my-3'></h2>)
+}
+
 export default Title
