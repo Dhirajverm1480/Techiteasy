@@ -12,7 +12,7 @@ const Products = () => {
   }, [products]);
   
   return (
-    <section className="px-[4%] flex justify-between mb-4">
+    <section className="page-frame flex justify-between mb-4">
       <div className="hidden md:block w-full md:w-[20%] mr-2">
         <SideBar />
       </div>

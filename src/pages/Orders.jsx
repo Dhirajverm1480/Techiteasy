@@ -4,7 +4,7 @@ import { ShopContext } from '../contexts/ShopContext'
 const Orders = () => {
     const {products } = useContext(ShopContext)
   return (
-    <div className='border-t pt-16'>
+    <div className='page-frame'>
       <div className='text-2xl'>
         <p>My orders</p>
       </div>

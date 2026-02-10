@@ -6,5 +6,5 @@
 }
 
 .page-frame{
-    @apply w-full p-5;
+    @apply w-full px-[5%] py-5;
 }

@@ -26,7 +26,7 @@ const Cart = () => {
     setCartData(tempData);
   }, [cartItems]);
   return (
-    <div className="border-t pt-14 px-[5%]">
+    <div className="border-t page-frame">
       <div>
         <p>Carts</p>
       </div>

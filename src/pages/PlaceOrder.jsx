@@ -5,7 +5,7 @@ import { ShopContext } from '../contexts/ShopContext'
 const PlaceOrder = () => {
   const {navigate} = useContext(ShopContext)
   return (
-    <div className='flex flex-col sm:flex-row justify-between gap-4 pt-5 sm:pt-14 min-h-[80vh] border-t'>
+    <div className='page-frame flex flex-col sm:flex-row justify-between gap-4 min-h-[80vh]'>
 
       {/* ---------- Left side -------------- */}
       <div className='flex flex-col gap-4 w-full sm:max-w-[480px]'>
