@@ -18,4 +18,4 @@ import Menu from '../assets/icons/menu.png';
 import SearchImg from '../assets/icons/search-regular-24.png';
 import UserImg from '../assets/icons/user.png'
 
-export const Icons = {CashOnDel, CashOnDel2, CustomerSupport, DeliveryTruck, Heart, Rupee, Rupee1, Rupee2, Rupee3, Sync, Transfer, Cart, Close, Gears, LogIn, LogOut, Menu, SearchImg, UserImg}
+export const IconImg = {CashOnDel, CashOnDel2, CustomerSupport, DeliveryTruck, Heart, Rupee, Rupee1, Rupee2, Rupee3, Sync, Transfer, Cart, Close, Gears, LogIn, LogOut, Menu, SearchImg, UserImg}

@@ -1,8 +1,9 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ShopContext } from "../contexts/ShopContext";
 import Title from "../components/Title";
 import Subtitle from "../components/Subtitle";
+import { IconImg } from "../constants";
 
 const Product = () => {
   const { productId } = useParams();
@@ -28,7 +29,7 @@ const Product = () => {
   }, [products, productId]);
 
   return productData ? (
-    <section className="page-frame min-h-screen transition-opacity ease-in duration-500 opacity-100 px-[2%]">
+    <section className="page-frame min-h-screen transition-opacity ease-in duration-500 opacity-100">
       {/* Product Data */}
       <div className="flex gap-12 sm:gap-12 flex-col sm:flex-row ">
         {/* Product Image */}
@@ -53,13 +54,16 @@ const Product = () => {
             {productData.price}
           </p>
 
-          <div className="mt-3 mb-5 py-3">
+          <div className="mt-3 mb-5 py-3 flex justify-between items-center gap-1">
             <button
               onClick={() => addToCart(productData._id)}
               className="w-full bg-black text-white px-8 py-3 mt-1 text-sm active:bg-gray-700 hover:bg-white hover:text-black border border-black rounded"
             >
               Add To Cart
             </button>
+            <a href="#" className="border py-2 px-2 rounded mt-1">
+              <img src={IconImg.Heart} alt="" className="w-9 h-7" />
+            </a>
           </div>
           {/* <hr className="mt-8 sm:w-4/5 " /> */}
           <div  className="bg-[#f2f2f2] px-4 rounded-lg mb-6">
