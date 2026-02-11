@@ -28,7 +28,7 @@ const Product = () => {
   }, [products, productId]);
 
   return productData ? (
-    <section className="page-frame xl:h-screen transition-opacity ease-in duration-500 opacity-100 px-[2%]">
+    <section className="page-frame min-h-screen transition-opacity ease-in duration-500 opacity-100 px-[2%]">
       {/* Product Data */}
       <div className="flex gap-12 sm:gap-12 flex-col sm:flex-row ">
         {/* Product Image */}
