@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ShopContext } from "../contexts/ShopContext";
 import Title from "../components/Title";
@@ -9,24 +9,42 @@ const Product = () => {
   const { productId } = useParams();
   console.log("ProductId ", productId);
   const { products, addToCart } = useContext(ShopContext);
-  const [productData, setProductData] = useState(false);
-  const [image, setImage] = useState("");
+  // const [productData, setProductData] = useState(false);
+  const [mainImage, setMainImage] = useState("");
 
-  const fetchProductData = async () => {
-    products.map((item) => {
-      if (item._id === productId) {
-        setProductData(item);
-        setImage(item.image[0]);
-        console.log(item);
-        return null;
-      }
-    });
-  };
-  // console.log("Pro", productData)
+  const productData = useMemo(() => {
+    if (!products) return null;
+    const product = products.find((item) => item._id === productId);
+    if (product && !mainImage) setMainImage(product.image[0]);
+    return product || null;
+  }, [products, productId, mainImage]);
 
-  useEffect(() => {
-    fetchProductData();
-  }, [products, productId]);
+  if (!productData) {
+    // Skeleton Loader while product data is loading
+    return (
+      <section className="page-frame min-h-screen p-6">
+        <div className="animate-pulse flex flex-col sm:flex-row gap-12">
+          <div className="flex-1 flex flex-col sm:flex-row gap-3">
+            <div className="flex sm:flex-col gap-2 w-full sm:w-[18.7%]">
+              {[1, 2, 3, 4].map((idx) => (
+                <div
+                  key={idx}
+                  className="w-[20%] sm:w-full h-20 bg-gray-300 rounded"
+                />
+              ))}
+            </div>
+            <div className="w-full sm:w-[80%] h-96 bg-gray-300 rounded" />
+          </div>
+          <div className="flex-1 space-y-3">
+            <div className="h-8 bg-gray-300 rounded w-3/4" />
+            <div className="h-6 bg-gray-300 rounded w-1/2" />
+            <div className="h-6 bg-gray-300 rounded w-1/4" />
+            <div className="h-12 bg-gray-300 rounded w-full mt-4" />
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return productData ? (
     <section className="page-frame min-h-screen transition-opacity ease-in duration-500 opacity-100">
@@ -34,15 +52,21 @@ const Product = () => {
       <div className="flex gap-12 sm:gap-12 flex-col sm:flex-row ">
         {/* Product Image */}
         <div className="flex-1 flex flex-col-reverse gap-3 sm:flex-row">
-          <div className='flex sm:flex-col justify-between sm:justify-normal sm:w-[18.7%] w-full'>
-            {
-              productData.image.map((item, index) => (
-                <img src={item} key={index} className='w-[20%] sm:w-full sm:mb-3 flex-shrink-0 cursor-pointer border rounded p-2' />
-              ))
-            }
+          <div className="flex sm:flex-col justify-between sm:justify-normal sm:w-[18.7%] w-full">
+            {productData.image.map((item, index) => (
+              <img
+                src={item}
+                key={index}
+                className="w-[20%] sm:w-full sm:mb-3 flex-shrink-0 cursor-pointer border rounded p-2"
+              />
+            ))}
           </div>
           <div className="w-full sm:w-[80%] md:mb-20">
-            <img className="w-full md:w-[70%] h-96 cursor-pointer" src={image} alt={productData.title} />
+            <img
+              className="w-full md:w-[70%] h-96 cursor-pointer"
+              src={mainImage}
+              alt={productData.title}
+            />
           </div>
         </div>
         {/* -------Product Info------ */}
@@ -66,7 +90,7 @@ const Product = () => {
             </a>
           </div>
           {/* <hr className="mt-8 sm:w-4/5 " /> */}
-          <div  className="bg-[#f2f2f2] px-4 rounded-lg mb-6">
+          <div className="bg-[#f2f2f2] px-4 rounded-lg mb-6">
             <div className="py-3">
               <Subtitle
                 subtitle={"No extra costs at checkout, delivered to your door."}
@@ -87,18 +111,16 @@ const Product = () => {
           {/* <Title title={"Features"} /> */}
           <Subtitle subtitle={"Features"} />
           <div className="pl-4">
-            {
-              productData.features.map((item, index) => (
-                <div key={index} className="flex gap-1">
-                  {/* <span>-</span> */}
-                  <li className="mb-1 text-sm">{item}</li>
-                </div>
-              ))
-            }
+            {productData.features.map((item, index) => (
+              <div key={index} className="flex gap-1">
+                {/* <span>-</span> */}
+                <li className="mb-1 text-sm">{item}</li>
+              </div>
+            ))}
           </div>
         </div>
         <div className="sticky top-14 w-full md:w-[40%] my-3 py-3 px-2 h-fit bg-[#f2f2f2] rounded-lg">
-          <img src={image} alt={productData.title} />
+          <img src={mainImage} alt={productData.title} />
         </div>
       </div>
       <hr />
