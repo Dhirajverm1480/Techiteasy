@@ -69,56 +69,6 @@ git clone https://github.com/your-username/TechItEasy.git
 cd TechItEasy
 ```
 
----
-
-### 2️⃣ Install Dependencies
-
-#### Backend
-
-```bash
-cd server
-npm install
-```
-
-#### Frontend
-
-```bash
-cd client
-npm install
-```
-
----
-
-### 3️⃣ Setup Environment Variables
-
-Create a `.env` file inside the `server` folder:
-
-```
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
-```
-
----
-
-### 4️⃣ Run the Application
-
-#### Start Backend
-
-```bash
-cd server
-npm start
-```
-
-#### Start Frontend
-
-```bash
-cd client
-npm start
-```
-
----
-
 ## 🌐 Default Ports
 
 - Frontend → https://techiteasy-ten.vercel.app/  

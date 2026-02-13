@@ -1,10 +1,5 @@
 @import "tailwindcss";
 
-.active{
-    color: red;
-    border-bottom: 1px solid red;
-}
-
 .page-frame{
     @apply w-full px-[5%] py-5;
 }

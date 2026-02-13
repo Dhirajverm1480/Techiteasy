@@ -10,6 +10,7 @@ import ProductDetails from "./pages/ProductDetails";
 import SearchBar from "./components/SearchBar";
 import PlaceOrder from "./pages/PlaceOrder";
 import Orders from "./pages/Orders";
+import ScrollToTop from "./components/ScrollToTop";
 
 export const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
@@ -18,6 +19,7 @@ const App = () => {
     <div>
       <NavBar />
       <SearchBar />
+      <ScrollToTop />
       {/* <hr /> */}
       <main className="min-h-screen">
         <Routes>

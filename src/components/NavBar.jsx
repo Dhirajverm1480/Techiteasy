@@ -4,6 +4,13 @@ import { useContext, useState } from "react";
 import { ShopContext } from "../contexts/ShopContext";
 import { IconImg } from "../constants";
 
+const navLinks = [
+  { path: "/", label: "Home" },
+  { path: "/tech", label: "Product" },
+  { path: "/about", label: "About" },
+  { path: "/contact", label: "Contact" },
+];
+
 const NavBar = () => {
   const [visible, setVisible] = useState(false);
   const { setShowSearch, getCartCount } = useContext(ShopContext);
@@ -12,18 +19,14 @@ const NavBar = () => {
     <header className="sticky top-0 z-1000 px-[4%] backdrop-blur-3xl">
       <div className="flex justify-between items-center px-3 py-2">
         <ul className="hidden sm:flex gap-5 text-sm">
-          <NavLink to="/">
-            <p>Home</p>
-          </NavLink>
-          <NavLink to="/tech">
-            <p>Product</p>
-          </NavLink>
-          <NavLink to="/about">
-            <p>About</p>
-          </NavLink>
-          <NavLink to="/contact">
-            <p>Contact</p>
-          </NavLink>
+          {navLinks.map((link) => (
+            <NavLink
+              to={link.path}
+              className={({ isActive }) => (isActive ? "text-orange-500" : "")}
+            >
+              <p>{link.label}</p>
+            </NavLink>
+          ))}
         </ul>
 
         <Link to={`/`}>
@@ -36,7 +39,7 @@ const NavBar = () => {
               onClick={() => setShowSearch(true)}
               className="p-1 cursor-pointer"
               src={IconImg.SearchImg}
-              alt=""
+              alt="Search Image"
             />
           </div>
           <NavLink to="/login">
@@ -45,7 +48,7 @@ const NavBar = () => {
             </p>
           </NavLink>
           <Link to="/cart" className="relative">
-            <img className="w-5 min-w-5" src={IconImg.Cart} alt="" />
+            <img className="w-5 min-w-5" src={IconImg.Cart} alt="Cart Image" />
             <p className="absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-red-300 text-white aspect-square rounded-full text-[8px]">
               {getCartCount()}
             </p>
@@ -66,7 +69,7 @@ const NavBar = () => {
             className="sm:hidden"
             onClick={() => setVisible(true)}
             src={IconImg.Menu}
-            alt=""
+            alt="Menu Image"
           />
         </div>
         {/* Side */}
@@ -79,39 +82,22 @@ const NavBar = () => {
             onClick={() => setVisible(false)}
             className="flex items-center gap-4 p-3 cursor-pointer"
           >
-            <img src={IconImg.Close} alt="" />
+            <img src={IconImg.Close} alt="Close Menu" />
             <p>Close</p>
           </div>
-          <NavLink
-            onClick={() => setVisible(flase)}
-            className="py-2 pl-6 border"
-            to="/"
-          >
-            {" "}
-            home
-          </NavLink>
-          <NavLink
-            onClick={() => setVisible(flase)}
-            className="py-2 pl-6 border"
-            to="/about"
-          >
-            {" "}
-            About
-          </NavLink>
-          <NavLink
-            onClick={() => setVisible(flase)}
-            className="py-2 pl-6 border"
-            to="/product"
-          >
-            Product
-          </NavLink>
-          <NavLink
-            onClick={() => setVisible(flase)}
-            className="py-2 pl-6 border"
-            to="/contact"
-          >
-            Contact
-          </NavLink>
+          {navLinks.map((link) => (
+            <NavLink
+              key={link.path}
+              onClick={() => setVisible(false)}
+              // className="py-2 pl-6 border"
+              className={({ isActive }) =>
+                `py-2 pl-6 border-b ${isActive ? "text-orange-500" : ""}`
+              }
+              to={link.path}
+            >
+              {link.label}
+            </NavLink>
+          ))}
         </div>
       </div>
     </header>
