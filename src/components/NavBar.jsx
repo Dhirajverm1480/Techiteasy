@@ -11,7 +11,6 @@ const NavBar = () => {
   return (
     <header className="sticky top-0 z-1000 px-[4%] backdrop-blur-3xl">
       <div className="flex justify-between items-center px-3 py-2">
-        {/* <Link to={`/`}><img className='w-10 cursor-pointer' src={Icon} alt="" /></Link> */}
         <ul className="hidden sm:flex gap-5 text-sm">
           <NavLink to="/">
             <p>Home</p>

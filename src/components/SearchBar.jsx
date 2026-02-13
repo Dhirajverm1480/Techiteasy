@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../contexts/ShopContext";
-import SearchIcon from "../assets/icons/search-regular-24.png";
-import CloseIcan from "../assets/icons/close.png";
 import { useLocation } from "react-router-dom"; // this hook is used for get the page location
+import { IconImg } from "../constants";
 
 const SearchBar = () => {
   const { search, setSearch, showSearch, setShowSearch } =
@@ -29,12 +28,12 @@ const SearchBar = () => {
           type="text"
           placeholder="Search"
         />
-        <img className="w-4" src={SearchIcon} alt="Search" />
+        <img className="w-4" src={IconImg.SearchImg} alt="Search" />
       </div>
       <img
         onClick={(e) => setShowSearch(false)}
         className="inline w-3 cursor-pointer"
-        src={CloseIcan}
+        src={IconImg.Close}
         alt="close"
       />
     </div>

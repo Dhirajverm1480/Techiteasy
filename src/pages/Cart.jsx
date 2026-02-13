@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../contexts/ShopContext";
 import Close from "../assets/icons/close.png";
 import CartTotal from "../components/CartTotal";

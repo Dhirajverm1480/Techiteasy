@@ -1,16 +1,176 @@
-# React + Vite
+# 🚀 TechItEasy
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+TechItEasy is a full-stack e-commerce web application built using the MERN stack.  
+It allows users to browse tech products, register/login securely, add items to cart, and place orders.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tech Stack
 
-## React Compiler
+**Frontend**
+- React.js
+- React Router
+- Axios
+- CSS / Tailwind / Bootstrap
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Backend**
+- Node.js
+- Express.js
+- MongoDB (Mongoose)
+- JWT Authentication
+- bcrypt (Password Hashing)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📂 Project Structure
+
+```
+TechItEasy/
+│
+├── client/               # React Frontend
+│   ├── src/
+│   └── package.json
+│
+├── server/               # Express Backend
+│   ├── models/
+│   ├── routes/
+│   ├── middleware/
+│   ├── server.js
+│   └── package.json
+│
+└── README.md
+```
+
+---
+
+## ✨ Features
+
+### 👤 User Features
+- User Registration & Login
+- Secure JWT Authentication
+- Browse Products
+- Add to Cart
+- Checkout System
+- Order History
+
+### 🛠️ Admin Features
+- Add / Edit / Delete Products
+- Manage Users
+- Manage Orders
+
+---
+
+## ⚙️ Installation
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/your-username/TechItEasy.git
+cd TechItEasy
+```
+
+---
+
+### 2️⃣ Install Dependencies
+
+#### Backend
+
+```bash
+cd server
+npm install
+```
+
+#### Frontend
+
+```bash
+cd client
+npm install
+```
+
+---
+
+### 3️⃣ Setup Environment Variables
+
+Create a `.env` file inside the `server` folder:
+
+```
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+```
+
+---
+
+### 4️⃣ Run the Application
+
+#### Start Backend
+
+```bash
+cd server
+npm start
+```
+
+#### Start Frontend
+
+```bash
+cd client
+npm start
+```
+
+---
+
+## 🌐 Default Ports
+
+- Frontend → http://localhost:3000  
+- Backend → http://localhost:5000  
+
+---
+
+## 🔐 Security
+
+- Password hashing using bcrypt
+- JWT-based authentication
+- Protected routes middleware
+- Environment variable configuration
+
+---
+
+## 🚀 Future Improvements
+
+- Payment Integration (Stripe / Razorpay)
+- Wishlist Feature
+- Product Reviews & Ratings
+- Admin Analytics Dashboard
+- Deployment (Vercel + Render)
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repository  
+2. Create your feature branch  
+3. Commit your changes  
+4. Push to the branch  
+5. Open a Pull Request  
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 👨‍💻 Author
+
+Developed by Your Name
+
+
+
+## 📸 Screenshots
+
+_Desktop UI Home Page Screenshot_
+
+![Home Page](./screenshots/home.webp)
+
+```md

@@ -1,8 +1,7 @@
 import { useContext, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ShopContext } from "../contexts/ShopContext";
-import Title from "../components/Title";
-import Subtitle from "../components/Subtitle";
+import Title, { Subtitle } from "../components/Title";
 import { IconImg } from "../constants";
 
 const Product = () => {
