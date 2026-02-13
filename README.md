@@ -121,8 +121,8 @@ npm start
 
 ## 🌐 Default Ports
 
-- Frontend → http://localhost:3000  
-- Backend → http://localhost:5000  
+- Frontend → https://techiteasy-ten.vercel.app/  
+<!-- - Backend → http://localhost:5000   -->
 
 ---
 
@@ -163,7 +163,7 @@ This project is licensed under the MIT License.
 
 ## 👨‍💻 Author
 
-Developed by Your Name
+Developed by Dhiraj Verma
 
 
 
@@ -171,6 +171,6 @@ Developed by Your Name
 
 _Desktop UI Home Page Screenshot_
 
-![Home Page](./screenshots/home.webp)
+![Home Page](./screenshots/Home.webp)
 
 ```md
