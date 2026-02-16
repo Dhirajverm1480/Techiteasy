@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
@@ -18,20 +18,19 @@ const ShopContextProvider = (props) => {
 
   const getCategory = async () => {
     try {
-      const response = await axios.get(backendUrl+ "/api/v1/category")
-      // console.log("Cat", response.data.data)
-      if(response.data.data){
-        setCategories(response.data.data)
+      const response = await axios.get(backendUrl + "/api/v1/category");
+      if (response.data.data) {
+        setCategories(response.data.data);
       }
     } catch (error) {
       console.log("Category error: ", error);
       toast.error(error.message);
     }
-  }
+  };
 
   useEffect(() => {
-    getCategory()
-  },[])
+    getCategory();
+  }, []);
 
   const addToCart = async (itemId) => {
     let cartData = structuredClone(cartItems);
@@ -110,8 +109,6 @@ const ShopContextProvider = (props) => {
 
   useEffect(() => {
     getProductData();
-    // getGameData();
-    // getBookData();
   }, []);
 
   useEffect(() => {
@@ -119,6 +116,13 @@ const ShopContextProvider = (props) => {
       setToken(localStorage.getItem("token"));
     }
   }, []);
+
+  const filterProduct = useMemo(() => {
+    if (!search) return products;
+    return products.filter((product) =>
+      product.title.toLowerCase().includes(search.toLowerCase()),
+    );
+  }, [search, products]);
 
   const value = {
     categories,
@@ -137,6 +141,8 @@ const ShopContextProvider = (props) => {
     delivery_fee,
     token,
     setToken,
+
+    filterProducts: filterProduct,
   };
 
   return (

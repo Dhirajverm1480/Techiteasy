@@ -5,7 +5,7 @@ const SideBar = () => {
   const { categories } = useContext(ShopContext);
   const [visible, setVisible] = useState({
     categories: true,
-    price: false,
+    price: true,
     brand: false,
   });
   const [selectedCategories, setSelectedCategories] = useState([]);
@@ -48,7 +48,7 @@ const SideBar = () => {
                   onChange={() => toggleCategory(item._id)}
                   className="mr-4 cursor-pointer"
                 />
-                <p className="font-bold">{item.name}</p>
+                <span className="font-bold">{item.name}</span>
               </div>
             ))}
           </div>
@@ -56,15 +56,29 @@ const SideBar = () => {
       </div>
 
       <div className="border rounded my-3">
-        <h2 className="border-b px-4 py-3 font-bold text-lg">Price</h2>
-        <div className="border-b flex px-4 py-3">
+        <h2 
+        onClick={() => toggleVisibility("price")}
+        className="border-b px-4 py-3 font-bold text-lg">Price</h2>
+        {/* <div className="border-b flex px-4 py-3">
           <input type="checkbox" className="mr-4" />
           <p className="font-bold">Min Price</p>
         </div>
         <div className="border-b flex px-4 py-3">
           <input type="checkbox" className="mr-4" />
           <p className="font-bold">Max Price</p>
-        </div>
+        </div> */}
+        {visible.price && (
+          <div>
+            <div className="border-b flex px-4 py-3">
+              <input type="checkbox" className="mr-4" />
+              <p className="font-bold">Min Price</p>
+            </div>
+            <div className="border-b flex px-4 py-3">
+              <input type="checkbox" className="mr-4" />
+              <p className="font-bold">Max Price</p>
+            </div>
+          </div>
+        )}
       </div>
     </aside>
   );
