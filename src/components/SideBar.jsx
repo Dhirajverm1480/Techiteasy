@@ -1,14 +1,14 @@
 import { useContext, useState } from "react";
 import { ShopContext } from "../contexts/ShopContext";
 
-const SideBar = () => {
+const SideBar = ({ selectedCategories, setSelectedCategories }) => {
   const { categories } = useContext(ShopContext);
   const [visible, setVisible] = useState({
     categories: true,
     price: true,
     brand: false,
   });
-  const [selectedCategories, setSelectedCategories] = useState([]);
+  // const [selectedCategories, setSelectedCategories] = useState([]);
 
   const toggleCategory = (id) => {
     setSelectedCategories((prev) =>
@@ -38,7 +38,7 @@ const SideBar = () => {
         {visible.categories && (
           <div>
             {categories.map((item) => (
-              <div
+              <label
                 key={item._id}
                 className="border-b flex px-4 py-3 cursor-pointer"
               >
@@ -49,24 +49,19 @@ const SideBar = () => {
                   className="mr-4 cursor-pointer"
                 />
                 <span className="font-bold">{item.name}</span>
-              </div>
+              </label>
             ))}
           </div>
         )}
       </div>
 
       <div className="border rounded my-3">
-        <h2 
-        onClick={() => toggleVisibility("price")}
-        className="border-b px-4 py-3 font-bold text-lg">Price</h2>
-        {/* <div className="border-b flex px-4 py-3">
-          <input type="checkbox" className="mr-4" />
-          <p className="font-bold">Min Price</p>
-        </div>
-        <div className="border-b flex px-4 py-3">
-          <input type="checkbox" className="mr-4" />
-          <p className="font-bold">Max Price</p>
-        </div> */}
+        <h2
+          onClick={() => toggleVisibility("price")}
+          className="border-b px-4 py-3 font-bold text-lg"
+        >
+          Price
+        </h2>
         {visible.price && (
           <div>
             <div className="border-b flex px-4 py-3">

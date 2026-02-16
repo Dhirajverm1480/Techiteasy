@@ -5,10 +5,10 @@ import { ShopContext } from "../contexts/ShopContext";
 import { IconImg } from "../constants";
 
 const navLinks = [
-  { path: "/", label: "Home" },
-  { path: "/tech", label: "Product" },
-  { path: "/about", label: "About" },
-  { path: "/contact", label: "Contact" },
+  { id: 1,path: "/", label: "Home" },
+  { id: 2,path: "/tech", label: "Product" },
+  { id: 3,path: "/about", label: "About" },
+  { id: 4,path: "/contact", label: "Contact" },
 ];
 
 const NavBar = () => {
@@ -21,6 +21,7 @@ const NavBar = () => {
         <ul className="hidden sm:flex gap-5 text-sm">
           {navLinks.map((link) => (
             <NavLink
+              key={link.id}
               to={link.path}
               className={({ isActive }) => (isActive ? "text-orange-500" : "")}
             >
