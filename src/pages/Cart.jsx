@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../contexts/ShopContext";
 import Close from "../assets/icons/close.png";
 import CartTotal from "../components/CartTotal";
+import Title from "../components/Title";
 
 const Cart = () => {
   const { products, cartItems, updateQuantity, navigate, delivery_fee } =
@@ -25,13 +26,13 @@ const Cart = () => {
     console.log("TempData :", tempData);
     setCartData(tempData);
   }, [cartItems]);
-  return (
-    <div className="border-t page-frame">
-      <div>
-        <p>Carts</p>
-      </div>
 
-      <div>
+  return (
+    <div className="page-frame">
+      <Title title={"Cart"} />
+
+      <div className="md:flex justify-between">
+        <div className="w-full md:w-[58%] border-r">
         {cartData.map((item, index) => {
           const productData = products.find(
             (product) => product._id === item._id,
@@ -52,7 +53,10 @@ const Cart = () => {
                     {productData.title}
                   </p>
                   <div className="flex items-center gap-5 mt-2">
-                    <div>{productData.price}</div>
+                    <div>
+                      {"Rs."}
+                      {productData.price}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -84,12 +88,13 @@ const Cart = () => {
           <div className="w-full text-end">
             <button
               onClick={() => navigate("/place-order")}
-              className="bg-black text-white text-sm my-8 px-8 py-3"
+              className="bg-black text-white text-sm my-8 px-8 py-3 cursor-pointer"
             >
               PROCEED TO
             </button>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

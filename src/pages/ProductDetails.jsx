@@ -80,7 +80,7 @@ const Product = () => {
           <div className="mt-3 mb-5 py-3 flex justify-between items-center gap-1">
             <button
               onClick={() => addToCart(productData._id)}
-              className="w-full bg-black text-white px-8 py-3 mt-1 text-sm active:bg-gray-700 hover:bg-white hover:text-black border border-black rounded"
+              className="w-full bg-black text-white px-8 py-3 mt-1 text-sm active:bg-gray-700 hover:bg-white hover:text-black border border-black rounded cursor-pointer"
             >
               Add To Cart
             </button>
