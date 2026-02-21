@@ -12,7 +12,7 @@ const ProductSections = () => {
 
   if (!products || products.length === 0) {
     return (
-      <section className="w-full">
+      <section className="w-full mb-4">
         <h1 className="animate-pulse w-96 h-20 bg-gray-300 mb-6"></h1>
         <div className="animate-pulse grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6">
           {Array.from({ length: 10 }).map((_, i) => (

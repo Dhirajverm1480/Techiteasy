@@ -19,30 +19,39 @@ const Login = () => {
         const response = await axios.post(
           backendUrl + "/api/v1/users/register",
           { name, email, username, password, phonenumber },
+          { withCredentials: true },
         );
         console.log("User Response : ", response.data);
         if (response.data.success) {
-          setToken(response.data.token);
-          localStorage.setItem(response.data.token);
+          const accessToken = response.data.data.accessToken;
+          setToken(accessToken);
+          // setToken(response.data.token);
+          localStorage.setItem("token", accessToken);
         } else {
           toast.error(response.data.message);
         }
       } else {
-        const response = await axios.post(backendUrl + "api/v1/users/login", {
-          email,
-          password,
-        });
+        const response = await axios.post(
+          backendUrl + "/api/v1/users/login",
+          {
+            email,
+            password,
+          },
+          { withCredentials: true },
+        );
         console.log("Login Response: ", response.data);
         if (response.data.success) {
-          setToken(response.data.token);
-          localStorage.setItem("token", response.data.token);
+          const accessToken = response.data.data.accessToken;
+          // setToken(response.data.token);
+          setToken(accessToken);
+          localStorage.setItem("token", accessToken);
         } else {
           toast.error(response.data.error);
         }
       }
     } catch (error) {
       console.error("loginpage error : ", error);
-      toast.error(response.data.message);
+      toast.error(error.response?.data?.message || "Something went wrong");
     }
   };
 
@@ -50,7 +59,7 @@ const Login = () => {
     if (token) {
       navigate("/");
     }
-  }, []);
+  }, [token]);
 
   return (
     <form
