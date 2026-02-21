@@ -11,6 +11,7 @@ import SearchBar from "./components/SearchBar";
 import PlaceOrder from "./pages/PlaceOrder";
 import Orders from "./pages/Orders";
 import ScrollToTop from "./components/ScrollToTop";
+import WishList from "./pages/WishList";
 
 export const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
@@ -34,6 +35,7 @@ const App = () => {
           />
           <Route path="/place-order" element={<PlaceOrder />} />
           <Route path="/order" element={<Orders />} />
+          <Route path="/wish" element={<WishList/>} />
         </Routes>
       </main>
       <Footer />

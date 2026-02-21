@@ -6,9 +6,8 @@ import { IconImg } from "../constants";
 
 const Product = () => {
   const { productId } = useParams();
-  console.log("ProductId ", productId);
+  // console.log("ProductId ", productId);
   const { products, addToCart } = useContext(ShopContext);
-  // const [productData, setProductData] = useState(false);
   const [mainImage, setMainImage] = useState("");
 
   const productData = useMemo(() => {

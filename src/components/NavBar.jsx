@@ -5,10 +5,10 @@ import { ShopContext } from "../contexts/ShopContext";
 import { IconImg } from "../constants";
 
 const navLinks = [
-  { id: 1,path: "/", label: "Home" },
-  { id: 2,path: "/tech", label: "Product" },
-  { id: 3,path: "/about", label: "About" },
-  { id: 4,path: "/contact", label: "Contact" },
+  { id: 1, path: "/", label: "Home" },
+  { id: 2, path: "/tech", label: "Product" },
+  { id: 3, path: "/about", label: "About" },
+  { id: 4, path: "/contact", label: "Contact" },
 ];
 
 const NavBar = () => {
@@ -58,11 +58,14 @@ const NavBar = () => {
             <img className="cursor-pointer" src={IconImg.Gears} alt="" />
             <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
               <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-transparent backdrop:blur-lg border rounded">
-                <p className="cursor-pointer hover:text-black border-b">
-                  WishList
-                </p>
-                <p className="cursor-pointer hover:text-black border-b">Dark</p>
-                <p className="cursor-pointer hover:text-black border-b">Mode</p>
+                <Link
+                  to={"/wish"}
+                  className="cursor-pointer hover:text-black border-b"
+                >
+                  <p>WishList</p>
+                </Link>
+                {/* <p className="cursor-pointer hover:text-black border-b">Dark</p>
+                <p className="cursor-pointer hover:text-black border-b">Mode</p> */}
               </div>
             </div>
           </div>
