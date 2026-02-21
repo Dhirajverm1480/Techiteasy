@@ -13,11 +13,11 @@ import Orders from "./pages/Orders";
 import ScrollToTop from "./components/ScrollToTop";
 import WishList from "./pages/WishList";
 
-export const backendUrl = import.meta.env.VITE_BACKEND_URL;
+export const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:8080";
 
 const App = () => {
   return (
-    <div>
+    <>
       <NavBar />
       <SearchBar />
       <ScrollToTop />
@@ -26,7 +26,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/tech" element={<Tech />} />
+          <Route path="/products" element={<Tech />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />} />
           <Route
@@ -36,10 +36,11 @@ const App = () => {
           <Route path="/place-order" element={<PlaceOrder />} />
           <Route path="/order" element={<Orders />} />
           <Route path="/wish" element={<WishList/>} />
+          <Route path="*" element={<div>404 Page Not Found</div>} />
         </Routes>
       </main>
       <Footer />
-    </div>
+    </>
   );
 };
 

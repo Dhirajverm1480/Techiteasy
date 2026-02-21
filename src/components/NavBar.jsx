@@ -6,7 +6,7 @@ import { IconImg } from "../constants";
 
 const navLinks = [
   { id: 1, path: "/", label: "Home" },
-  { id: 2, path: "/tech", label: "Product" },
+  { id: 2, path: "/products", label: "Product" },
   { id: 3, path: "/about", label: "About" },
   { id: 4, path: "/contact", label: "Contact" },
 ];
