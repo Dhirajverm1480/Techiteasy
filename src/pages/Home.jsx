@@ -9,7 +9,7 @@ const Home = () => {
         <Hero />
         <div className="w-full sm:w-[60%] px-[4%] mb-[6%]">
           <header>
-            <h1 className="text-4xl sm:text-6xl font-bold">
+            <h1 className="text-3xl sm:text-6xl font-bold">
               Tech for Every Mind That Loves to Level Up
             </h1>
 
@@ -20,7 +20,7 @@ const Home = () => {
             </p>
           </header>
         </div>
-        <div className="w-full sm:w-[40%] mb-[6%] px-[4%] flex sm:justify-end">
+        <div className="w-full sm:w-[40%] mb-[8%] px-[4%] flex sm:justify-end">
           <div className="my-6">
             <a href="#" className="w-full border rounded p-3 mr-3 font-bold hover:bg-black hover:text-white cursor-pointer">
               Shop Now

@@ -1,6 +1,8 @@
 const WishList = () => {
   return (
-    <div>WishList</div>
+    <section className="page-frame">
+      <div>WishList</div>
+    </section>
   )
 }
 

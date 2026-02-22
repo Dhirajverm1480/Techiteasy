@@ -48,13 +48,13 @@ const NavBar = () => {
               Login
             </p>
           </NavLink>
-          <Link to="/cart" className="relative">
+          <Link to="/cart" className="relative hidden md:block">
             <img className="w-5 min-w-5" src={IconImg.Cart} alt="Cart Image" />
             <p className="absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-red-300 text-white aspect-square rounded-full text-[8px]">
               {getCartCount()}
             </p>
           </Link>
-          <div className="group relative">
+          <div className="group relative hidden md:block">
             <img className="cursor-pointer" src={IconImg.Gears} alt="" />
             <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
               <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-transparent backdrop:blur-lg border rounded">
