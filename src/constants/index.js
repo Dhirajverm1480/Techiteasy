@@ -19,3 +19,57 @@ import SearchImg from '../assets/icons/search-regular-24.png';
 import UserImg from '../assets/icons/user.png'
 
 export const IconImg = {CashOnDel, CashOnDel2, CustomerSupport, DeliveryTruck, Heart, Rupee, Rupee1, Rupee2, Rupee3, Sync, Transfer, Cart, Close, Gears, LogIn, LogOut, Menu, SearchImg, UserImg}
+
+
+const reviews = [
+  {
+    id: "001",
+    userId: "65f1a2b3c4d5e6f7890a1234",
+    productId: "65f1b2c3d4e5f6a7890b5678",
+    useName: "John Doe",
+    rating: 5,
+    comment: "I’ve been using this product for a few weeks now and I’m extremely satisfied with the performance. The build quality feels premium, the features work exactly as described, and it exceeded my expectations in daily use. Definitely worth the price and I would highly recommend it to anyone looking for reliability and quality.",
+    numReviews: 1,
+    reviewDate: new Date("2026-03-20T10:15:00.000Z"),
+    createdAt: new Date("2026-02-20T10:15:00.000Z"),
+    updatedAt: new Date("2026-02-20T10:15:00.000Z")
+  },
+  {
+    id: "002",
+    userId: "65f1a2b3c4d5e6f7890a1235",
+    productId: "65f1b2c3d4e5f6a7890b5678",
+    useName: "Jane Smith",
+    rating: 4,
+    comment: "Overall, the product quality is very good and it performs well for most of my needs. The packaging was secure and the setup process was simple. The only downside was that the delivery took slightly longer than expected, but apart from that, I am quite happy with my purchase.",
+    numReviews: 2,
+    reviewDate: new Date("2026-02-21T14:30:00.000Z"),
+    createdAt: new Date("2026-02-21T14:30:00.000Z"),
+    updatedAt: new Date("2026-02-21T14:30:00.000Z")
+  },
+  {
+    id: "003",
+    userId: "65f1a2b3c4d5e6f7890a1236",
+    productId: "65f1b2c3d4e5f6a7890b9999",
+    useName: "Michael Lee",
+    rating: 3,
+    comment: "The product is decent for the price, but there are a few areas that could be improved. While the core functionality works fine, I noticed some minor issues with durability and finishing. It’s not bad, but it’s also not exceptional. Suitable if you’re on a budget.",
+    numReviews: 1,
+    reviewDate: new Date("2026-02-22T09:45:00.000Z"),
+    createdAt: new Date("2026-02-22T09:45:00.000Z"),
+    updatedAt: new Date("2026-02-22T09:45:00.000Z")
+  },
+  {
+    id: "004",
+    userId: "65f1a2b3c4d5e6f7890a1237",
+    productId: "65f1b2c3d4e5f6a7890b9999",
+    useName: "Sarah Johnson",
+    rating: 2,
+    comment: "Unfortunately, my experience with this product was not very positive. The material does not feel as strong as I expected, and after a few uses, I started noticing some wear and tear. It still works, but I’m not fully confident about its long-term durability.",
+    numReviews: 3,
+    reviewDate: new Date("2026-02-23T16:20:00.000Z"),
+    createdAt: new Date("2026-02-23T16:20:00.000Z"),
+    updatedAt: new Date("2026-02-23T16:20:00.000Z")
+  }
+];
+
+export {reviews}

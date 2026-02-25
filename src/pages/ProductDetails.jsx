@@ -2,7 +2,16 @@ import { useContext, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ShopContext } from "../contexts/ShopContext";
 import Title, { Subtitle } from "../components/Title";
-import { IconImg } from "../constants";
+import { IconImg, reviews } from "../constants";
+
+const formatDate = (date) =>
+  new Date(date).toLocaleString("en-US", {
+    year: "numeric",
+    month: "short",
+    date: "numeric ",
+    // hour: "2-digit",
+    // minute: "2-digit",
+  });
 
 const Product = () => {
   const { productId } = useParams();
@@ -121,14 +130,38 @@ const Product = () => {
           <img src={mainImage} alt={productData.title} />
         </div>
       </div>
-      <hr />
-      {/* <div className="bg-[#f2f2f2] p-5">
+
+      <div className="bg-[#f2f2f2] px-[4%] py-[3%] rounded-xl my-24">
         <Title title={"Product Reviews"} />
+        <div className="flex gap-10 py-5 flex-wrap md:flex-nowrap md:overflow-x-auto scrollbar-hide scroll-smooth">
+          {reviews.map((item) => (
+            <div
+              key={item.id}
+              className="w-full min-w-80 md:min-w-[440px] bg-white mb-2 mr-2 p-4 rounded-lg shadow-md"
+            >
+              <div className="flex gap-3 items-center mb-3">
+                <div className="w-12 h-12 bg-gray-300 rounded-full"></div>
+                <div>
+                  <h3 className="font-bold">{item.useName}</h3>
+                  <span>{item.rating}</span>
+                  <span>{formatDate(item.reviewDate)}</span>
+                </div>
+              </div>
+              <div className="my-3">
+                {"⭐".repeat(item.rating)}
+                {/* {[...Array(item.rating)].map((_, i) => (
+                  <span key={i}>⭐</span>
+                ))} */}
+              </div>
+              <p className="text-gray-500 text-xs md:text-md">{item.comment}</p>
+            </div>
+          ))}
+        </div>
       </div>
-      <hr />
+      {/* <hr /> */}
       <div>
         <Title title={"You may also like"} />
-      </div> */}
+      </div>
     </section>
   ) : (
     <div className="opacity-0"></div>
