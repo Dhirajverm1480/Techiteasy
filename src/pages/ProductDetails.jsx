@@ -18,6 +18,7 @@ const Product = () => {
   // console.log("ProductId ", productId);
   const { products, addToCart } = useContext(ShopContext);
   const [mainImage, setMainImage] = useState("");
+  const [visible, setVisible] = useState(false)
 
   const productData = useMemo(() => {
     if (!products) return null;
@@ -156,6 +157,35 @@ const Product = () => {
               <p className="text-gray-500 text-xs md:text-md">{item.comment}</p>
             </div>
           ))}
+        </div>
+        <div className="my-6">
+          <button onClick={() => setVisible(true)} className="w-44 h-12 pb-1 bg-white text-lg font-bold rounded-lg shadow-md cursor-pointer">
+            <span className="mr-3 text-2xl font-bold">+</span>Add Review
+          </button>
+        </div>
+        <div className={`bg-white shadow-md rounded-md ${visible? "block": "hidden"}`}>
+          <form action="" className="py-2 px-4">
+            <input
+              type="number"
+              name=""
+              id=""
+              placeholder="rating"
+              className="w-full md:w-56 border-b outline-none py-2 px-2 my-4 mr-3"
+            />
+            <input
+              type="text"
+              name=""
+              id=""
+              placeholder="comment"
+              className="w-full md:w-56 border-b outline-none mb-4 md:mr-4 py-2 px-2"
+            />
+            <button
+              type="submit"
+              className="bg-black text-white px-4 py-2 rounded-md text-base font-bold hover:border border-black hover:bg-white hover:text-black shadow-md cursor-pointer"
+            >
+              Submit Review
+            </button>
+          </form>
         </div>
       </div>
       {/* <hr /> */}
