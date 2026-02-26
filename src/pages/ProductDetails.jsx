@@ -3,12 +3,14 @@ import { useParams } from "react-router-dom";
 import { ShopContext } from "../contexts/ShopContext";
 import Title, { Subtitle } from "../components/Title";
 import { IconImg, reviews } from "../constants";
+import axios from "axios";
+import { ReviewCard } from "../components/ReviewCard";
 
 const formatDate = (date) =>
   new Date(date).toLocaleString("en-US", {
     year: "numeric",
     month: "short",
-    date: "numeric ",
+    day: "numeric",
     // hour: "2-digit",
     // minute: "2-digit",
   });
@@ -18,7 +20,7 @@ const Product = () => {
   // console.log("ProductId ", productId);
   const { products, addToCart } = useContext(ShopContext);
   const [mainImage, setMainImage] = useState("");
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(false);
 
   const productData = useMemo(() => {
     if (!products) return null;
@@ -26,6 +28,25 @@ const Product = () => {
     if (product && !mainImage) setMainImage(product.image[0]);
     return product || null;
   }, [products, productId, mainImage]);
+
+  const onSubmitNewReviewByUser = async (id, e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        backendUrl + `/api/v1/${id}/review`,
+        {
+          rating,
+          comment,
+        },
+        {
+          withCredentials: true,
+        },
+      );
+      console.log("Review Data : ", response)
+    } catch (error) {
+      console.log("Reviews Err : ", error);
+    }
+  };
 
   if (!productData) {
     // Skeleton Loader while product data is loading
@@ -112,7 +133,7 @@ const Product = () => {
         </div>
       </div>
       <hr />
-      <div className="w-full md:flex justify-between my-3">
+      <div className="w-full md:flex justify-between my-20">
         <div className="w-full md:w-[55%] pr-4">
           <Title title={"Description"} />
           <p className="mb-5">{productData.description}</p>
@@ -136,34 +157,21 @@ const Product = () => {
         <Title title={"Product Reviews"} />
         <div className="flex gap-10 py-5 flex-wrap md:flex-nowrap md:overflow-x-auto scrollbar-hide scroll-smooth">
           {reviews.map((item) => (
-            <div
-              key={item.id}
-              className="w-full min-w-80 md:min-w-[440px] bg-white mb-2 mr-2 p-4 rounded-lg shadow-md"
-            >
-              <div className="flex gap-3 items-center mb-3">
-                <div className="w-12 h-12 bg-gray-300 rounded-full"></div>
-                <div>
-                  <h3 className="font-bold">{item.useName}</h3>
-                  <span>{item.rating}</span>
-                  <span>{formatDate(item.reviewDate)}</span>
-                </div>
-              </div>
-              <div className="my-3">
-                {"⭐".repeat(item.rating)}
-                {/* {[...Array(item.rating)].map((_, i) => (
-                  <span key={i}>⭐</span>
-                ))} */}
-              </div>
-              <p className="text-gray-500 text-xs md:text-md">{item.comment}</p>
-            </div>
+            <ReviewCard key={item.id} id={item.id} userName={item.userName} rating={item.rating} comment={item.comment} reviewDate={formatDate(item.reviewDate)} />
           ))}
         </div>
+
         <div className="my-6">
-          <button onClick={() => setVisible(true)} className="w-44 h-12 pb-1 bg-white text-lg font-bold rounded-lg shadow-md cursor-pointer">
+          <button
+            onClick={() => setVisible(true)}
+            className="w-44 h-12 pb-1 bg-white text-lg font-bold rounded-lg shadow-md cursor-pointer"
+          >
             <span className="mr-3 text-2xl font-bold">+</span>Add Review
           </button>
         </div>
-        <div className={`bg-white shadow-md rounded-md ${visible? "block": "hidden"}`}>
+        <div
+          className={`bg-white shadow-md rounded-md ${visible ? "block" : "hidden"}`}
+        >
           <form action="" className="py-2 px-4">
             <input
               type="number"

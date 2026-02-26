@@ -4,9 +4,9 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 export const ShopContext = createContext();
-
+export const backendUrl = import.meta.env.VITE_BACKEND_URL;
 const ShopContextProvider = (props) => {
-  const backendUrl = import.meta.env.VITE_BACKEND_URL;
+  
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState("");
   const [showSearch, setShowSearch] = useState(false);
