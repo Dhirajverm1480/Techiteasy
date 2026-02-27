@@ -110,16 +110,16 @@ const Product = () => {
           <div className="mt-3 mb-5 py-3 flex justify-between items-center gap-1">
             <button
               onClick={() => addToCart(productData._id)}
-              className="w-full bg-black text-white px-8 py-3 mt-1 text-sm active:bg-gray-700 hover:bg-white hover:text-black border border-black rounded cursor-pointer"
+              className="w-full bg-black text-white px-8 py-3 mt-1 text-sm active:bg-gray-700 hover:bg-white hover:text-black border border-black rounded shadow-md cursor-pointer"
             >
               Add To Cart
             </button>
-            <a href="#" className="border py-2 px-2 rounded mt-1">
+            <a href="#" className="border py-2 px-2 rounded shadow-md mt-1">
               <img src={IconImg.Heart} alt="" className="w-9 h-7" />
             </a>
           </div>
           {/* <hr className="mt-8 sm:w-4/5 " /> */}
-          <div className="bg-[#f2f2f2] px-4 rounded-lg mb-6">
+          <div className="bg-[#f2f2f2] px-4 rounded-lg mb-6 shadow-md">
             <div className="py-3">
               <Subtitle
                 subtitle={"No extra costs at checkout, delivered to your door."}
@@ -132,7 +132,7 @@ const Product = () => {
           </div>
         </div>
       </div>
-      <hr />
+      {/* <hr /> */}
       <div className="w-full md:flex justify-between my-20">
         <div className="w-full md:w-[55%] pr-4">
           <Title title={"Description"} />
@@ -163,7 +163,7 @@ const Product = () => {
 
         <div className="my-6">
           <button
-            onClick={() => setVisible(true)}
+            onClick={() => setVisible(prev => !prev)}
             className="w-44 h-12 pb-1 bg-white text-lg font-bold rounded-lg shadow-md cursor-pointer"
           >
             <span className="mr-3 text-2xl font-bold">+</span>Add Review
