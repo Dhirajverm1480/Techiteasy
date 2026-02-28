@@ -12,7 +12,12 @@ const navLinks = [
 ];
 
 const NavBar = () => {
-  const { token, setToken } = useContext(ShopContext);
+
+  const [visible, setVisible] = useState(false);
+  const [showBox, setShowBox] = useState(false);
+  const { setShowSearch, getCartCount, token, setToken, loading, user } = useContext(ShopContext);
+
+  console.log("User: ", user)
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -20,9 +25,7 @@ const NavBar = () => {
     setShowBox(false);
   };
 
-  const [visible, setVisible] = useState(false);
-  const [showBox, setShowBox] = useState(false);
-  const { setShowSearch, getCartCount } = useContext(ShopContext);
+  if(loading) return null
 
   return (
     <header className="sticky top-0 z-50 px-[4%] backdrop-blur-3xl">

@@ -6,15 +6,34 @@ import { useNavigate } from "react-router-dom";
 export const ShopContext = createContext();
 export const backendUrl = import.meta.env.VITE_BACKEND_URL;
 const ShopContextProvider = (props) => {
-  
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState("");
   const [showSearch, setShowSearch] = useState(false);
   const [cartItems, setCartItems] = useState({});
-  const [token, setToken] = useState();
+  const [token, setToken] = useState(() => {
+    const savedToken = localStorage.getItem("token");
+    return savedToken && savedToken !== "undefined" ? savedToken : "";
+  });
+  const [user, setUser] = useState([])
+  // const [loading, setLoading] = useState(true);
+
   const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
   const delivery_fee = 10;
+
+  useEffect(() => {
+    if (token) {
+      localStorage.setItem("token", token);
+    } else {
+      localStorage.removeItem("token");
+    }
+  }, [token]);
+
+  // useEffect(() => {
+  //   const savedToken = localStorage.getItem("token");
+  //   if (savedToken && savedToken !== "undefined") setToken(savedToken);
+  //   setLoading(false);
+  // }, []);
 
   const getCategory = async () => {
     try {
@@ -111,11 +130,11 @@ const ShopContextProvider = (props) => {
     getProductData();
   }, []);
 
-  useEffect(() => {
-    if (token && localStorage.getItem("token")) {
-      setToken(localStorage.getItem("token"));
-    }
-  }, [token]);
+  // useEffect(() => {
+  //   if (token && localStorage.getItem("token")) {
+  //     setToken(localStorage.getItem("token"));
+  //   }
+  // }, [token]);
 
   const filterProduct = useMemo(() => {
     if (!search) return products;
@@ -141,6 +160,8 @@ const ShopContextProvider = (props) => {
     delivery_fee,
     token,
     setToken,
+    setUser,
+    user,
 
     filterProducts: filterProduct,
   };
