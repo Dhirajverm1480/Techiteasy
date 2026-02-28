@@ -10,7 +10,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
-  const [phonenumber, setPhoneNumber] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
 
   const onSubmitHandler = async (event) => {
     event.preventDefault();
@@ -18,7 +18,7 @@ const Login = () => {
       if (currentStatus === "Sign Up") {
         const response = await axios.post(
           backendUrl + "/api/v1/users/register",
-          { name, email, username, password, phonenumber },
+          { name, email, username, password, phoneNumber },
           { withCredentials: true },
         );
         console.log("User Response : ", response.data);
@@ -93,7 +93,7 @@ const Login = () => {
           />
           <input
             onChange={(e) => setPhoneNumber(e.target.value)}
-            value={phonenumber}
+            value={phoneNumber}
             type="text"
             className="w-full px-3 py-2 border border-gray-800 mb-1"
             placeholder="Phone No"

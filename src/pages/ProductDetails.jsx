@@ -20,6 +20,7 @@ const Product = () => {
   // console.log("ProductId ", productId);
   const { products, addToCart } = useContext(ShopContext);
   const [mainImage, setMainImage] = useState("");
+  const [heartChange, setHeartChange] = useState(true)
   const [visible, setVisible] = useState(false);
 
   const productData = useMemo(() => {
@@ -114,9 +115,16 @@ const Product = () => {
             >
               Add To Cart
             </button>
-            <a href="#" className="border py-2 px-2 rounded shadow-md mt-1">
-              <img src={IconImg.Heart} alt="" className="w-9 h-7" />
-            </a>
+            <button onClick={() => setHeartChange(prev => !prev)} className="flex border py-2 px-2 rounded shadow-md mt-1 cursor-pointer">
+              {
+                heartChange? (
+                  <img src={IconImg.Heart} alt="wishList-heart" className="w-9 h-7" />
+                ):(
+                  <img src={IconImg.Heart_Fill} alt="wishlist-heart-fill" className="w-9 h-7" />
+                )
+              }
+              
+            </button>
           </div>
           {/* <hr className="mt-8 sm:w-4/5 " /> */}
           <div className="bg-[#f2f2f2] px-4 rounded-lg mb-6 shadow-md">

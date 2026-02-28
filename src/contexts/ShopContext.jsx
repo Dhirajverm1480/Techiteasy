@@ -115,7 +115,7 @@ const ShopContextProvider = (props) => {
     if (token && localStorage.getItem("token")) {
       setToken(localStorage.getItem("token"));
     }
-  }, []);
+  }, [token]);
 
   const filterProduct = useMemo(() => {
     if (!search) return products;

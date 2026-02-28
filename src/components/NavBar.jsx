@@ -12,9 +12,16 @@ const navLinks = [
 ];
 
 const NavBar = () => {
+  const { token, setToken } = useContext(ShopContext);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setToken("");
+    setShowBox(false);
+  };
+
   const [visible, setVisible] = useState(false);
   const [showBox, setShowBox] = useState(false);
-  const [loginCheck, setLoginCheck] = useState(false);
   const { setShowSearch, getCartCount } = useContext(ShopContext);
 
   return (
@@ -46,7 +53,7 @@ const NavBar = () => {
             />
           </div>
           <div>
-            {!loginCheck ? (
+            {!token ? (
               <NavLink to="/login">
                 <p className="bg-orange-400 text-white py-1 px-2 rounded hover:bg-transparent hover:border border-orange-400 hover:text-orange-400">
                   Login
@@ -64,7 +71,7 @@ const NavBar = () => {
                       showBox ? "opacity-100 visible" : "opacity-0 invisible"
                     }`}
                   >
-                    <p className="px-2 pb-1 text-lg">LogOut</p>
+                    <p onClick={handleLogout} className="px-2 pb-1 text-lg">LogOut</p>
                     <p className="px-2 text-lg">theme</p>
                     <p className="px-2"></p>
                     <p className="px-2"></p>
