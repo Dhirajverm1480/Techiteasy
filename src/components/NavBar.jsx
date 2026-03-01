@@ -12,12 +12,12 @@ const navLinks = [
 ];
 
 const NavBar = () => {
-
   const [visible, setVisible] = useState(false);
   const [showBox, setShowBox] = useState(false);
-  const { setShowSearch, getCartCount, token, setToken, loading, user } = useContext(ShopContext);
+  const { setShowSearch, getCartCount, token, setToken, loading, user } =
+    useContext(ShopContext);
 
-  console.log("User: ", user)
+  console.log("User: ", user);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -25,7 +25,7 @@ const NavBar = () => {
     setShowBox(false);
   };
 
-  if(loading) return null
+  if (loading) return null;
 
   return (
     <header className="sticky top-0 z-50 px-[4%] backdrop-blur-3xl">
@@ -74,7 +74,9 @@ const NavBar = () => {
                       showBox ? "opacity-100 visible" : "opacity-0 invisible"
                     }`}
                   >
-                    <p onClick={handleLogout} className="px-2 pb-1 text-lg">LogOut</p>
+                    <p onClick={handleLogout} className="px-2 pb-1 text-lg">
+                      LogOut
+                    </p>
                     <p className="px-2 text-lg">theme</p>
                     <p className="px-2"></p>
                     <p className="px-2"></p>

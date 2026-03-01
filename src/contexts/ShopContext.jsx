@@ -14,7 +14,7 @@ const ShopContextProvider = (props) => {
     const savedToken = localStorage.getItem("token");
     return savedToken && savedToken !== "undefined" ? savedToken : "";
   });
-  const [user, setUser] = useState([])
+  const [user, setUser] = useState(null); 
   // const [loading, setLoading] = useState(true);
 
   const [categories, setCategories] = useState([]);
@@ -27,6 +27,36 @@ const ShopContextProvider = (props) => {
     } else {
       localStorage.removeItem("token");
     }
+  }, [token]);
+
+  const getMe = async (token) => {
+    try {
+      const response = await axios.get(backendUrl + "/api/v1/users/me", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        withCredentials: true,
+      });
+
+      if (response.data.success) {
+        setUser(response.data.data);
+      }
+    } catch (error) {
+      console.log("GetUserErr : ", error);
+      console.log("User not authenticated");
+      setUser(null);
+      setToken("");
+      localStorage.removeItem("token");
+    }
+  };
+
+  useEffect(() => {
+    if (token) {
+      getMe(token);
+    } 
+    // else {
+    //   setUser(null);
+    // }
   }, [token]);
 
   // useEffect(() => {

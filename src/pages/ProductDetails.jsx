@@ -1,6 +1,6 @@
 import { useContext, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
-import { ShopContext } from "../contexts/ShopContext";
+import { backendUrl, ShopContext } from "../contexts/ShopContext";
 import Title, { Subtitle } from "../components/Title";
 import { IconImg, reviews } from "../constants";
 import axios from "axios";
@@ -20,8 +20,10 @@ const Product = () => {
   // console.log("ProductId ", productId);
   const { products, addToCart } = useContext(ShopContext);
   const [mainImage, setMainImage] = useState("");
-  const [heartChange, setHeartChange] = useState(true)
+  const [heartChange, setHeartChange] = useState(true);
   const [visible, setVisible] = useState(false);
+  const [rating, setRating] = useState("");
+  const [comment, setComment] = useState("");
 
   const productData = useMemo(() => {
     if (!products) return null;
@@ -30,11 +32,11 @@ const Product = () => {
     return product || null;
   }, [products, productId, mainImage]);
 
-  const onSubmitNewReviewByUser = async (id, e) => {
+  const onSubmitNewReviewByUser = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        backendUrl + `/api/v1/${id}/review`,
+        backendUrl + `/api/v1/products/${productData._id}/review`,
         {
           rating,
           comment,
@@ -43,7 +45,13 @@ const Product = () => {
           withCredentials: true,
         },
       );
-      console.log("Review Data : ", response)
+      console.log("Review Data : ", response);
+      // Optional: clear form
+      setRating("");
+      setComment("");
+      setVisible(false);
+
+       window.location.reload();
     } catch (error) {
       console.log("Reviews Err : ", error);
     }
@@ -115,15 +123,23 @@ const Product = () => {
             >
               Add To Cart
             </button>
-            <button onClick={() => setHeartChange(prev => !prev)} className="flex border py-2 px-2 rounded shadow-md mt-1 cursor-pointer">
-              {
-                heartChange? (
-                  <img src={IconImg.Heart} alt="wishList-heart" className="w-9 h-7" />
-                ):(
-                  <img src={IconImg.Heart_Fill} alt="wishlist-heart-fill" className="w-9 h-7" />
-                )
-              }
-              
+            <button
+              onClick={() => setHeartChange((prev) => !prev)}
+              className="flex border py-2 px-2 rounded shadow-md mt-1 cursor-pointer"
+            >
+              {heartChange ? (
+                <img
+                  src={IconImg.Heart}
+                  alt="wishList-heart"
+                  className="w-9 h-7"
+                />
+              ) : (
+                <img
+                  src={IconImg.Heart_Fill}
+                  alt="wishlist-heart-fill"
+                  className="w-9 h-7"
+                />
+              )}
             </button>
           </div>
           {/* <hr className="mt-8 sm:w-4/5 " /> */}
@@ -165,13 +181,20 @@ const Product = () => {
         <Title title={"Product Reviews"} />
         <div className="flex gap-10 py-5 flex-wrap md:flex-nowrap md:overflow-x-auto scrollbar-hide scroll-smooth">
           {reviews.map((item) => (
-            <ReviewCard key={item.id} id={item.id} userName={item.userName} rating={item.rating} comment={item.comment} reviewDate={formatDate(item.reviewDate)} />
+            <ReviewCard
+              key={item.id}
+              id={item.id}
+              userName={item.userName}
+              rating={item.rating}
+              comment={item.comment}
+              reviewDate={formatDate(item.reviewDate)}
+            />
           ))}
         </div>
 
         <div className="my-6">
           <button
-            onClick={() => setVisible(prev => !prev)}
+            onClick={() => setVisible((prev) => !prev)}
             className="w-44 h-12 pb-1 bg-white text-lg font-bold rounded-lg shadow-md cursor-pointer"
           >
             <span className="mr-3 text-2xl font-bold">+</span>Add Review
@@ -180,11 +203,19 @@ const Product = () => {
         <div
           className={`bg-white shadow-md rounded-md ${visible ? "block" : "hidden"}`}
         >
-          <form action="" className="py-2 px-4">
+          <form
+            onSubmit={onSubmitNewReviewByUser}
+            action=""
+            className="py-2 px-4"
+          >
             <input
               type="number"
+              min={1}
+              max={5}
               name=""
               id=""
+              value={rating}
+              onChange={(e) => setRating(e.target.value)}
               placeholder="rating"
               className="w-full md:w-56 border-b outline-none py-2 px-2 my-4 mr-3"
             />
@@ -192,11 +223,14 @@ const Product = () => {
               type="text"
               name=""
               id=""
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
               placeholder="comment"
               className="w-full md:w-56 border-b outline-none mb-4 md:mr-4 py-2 px-2"
             />
             <button
               type="submit"
+              disabled={!rating || !comment}
               className="bg-black text-white px-4 py-2 rounded-md text-base font-bold hover:border border-black hover:bg-white hover:text-black shadow-md cursor-pointer"
             >
               Submit Review

@@ -1,4 +1,4 @@
-import { useContext, useMemo } from "react";
+import { useContext} from "react";
 import { ShopContext } from "../contexts/ShopContext";
 import Items from "./Items";
 import Title from "./Title";
