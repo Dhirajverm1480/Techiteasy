@@ -28,7 +28,7 @@ const NavBar = () => {
   if (loading) return null;
 
   return (
-    <header className="sticky top-0 z-50 px-[4%] backdrop-blur-3xl">
+    <header className="sticky top-0 z-50 px-[4%]">
       <div className="flex justify-between items-center px-3 py-2">
         <ul className="hidden sm:flex gap-5 text-sm">
           {navLinks.map((link) => (

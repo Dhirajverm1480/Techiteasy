@@ -18,7 +18,7 @@ const formatDate = (date) =>
 const Product = () => {
   const { productId } = useParams();
   // console.log("ProductId ", productId);
-  const { products, addToCart } = useContext(ShopContext);
+  const { products, addToCart, user, navigate } = useContext(ShopContext);
   const [mainImage, setMainImage] = useState("");
   const [heartChange, setHeartChange] = useState(true);
   const [visible, setVisible] = useState(false);
@@ -35,6 +35,11 @@ const Product = () => {
   const onSubmitNewReviewByUser = async (e) => {
     e.preventDefault();
     try {
+      if(!user){
+        alert("User is not logged")
+        navigate("/login")
+      }
+
       const response = await axios.post(
         backendUrl + `/api/v1/products/${productData._id}/review`,
         {
