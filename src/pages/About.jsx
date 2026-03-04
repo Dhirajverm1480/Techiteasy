@@ -1,3 +1,4 @@
+import { FeatureCard } from "../components/FeatureCard";
 import { HeaderCard } from "../components/HeaderCard";
 
 const About = () => {
@@ -22,57 +23,56 @@ const About = () => {
           <div className="w-96 h-96 shadow-2xl rounded-xl"></div>
         </div>
       </section>
-      <section className="page-frame bg-white md:mt-10 pointer-events-none">
-        <div className="flex items-center justify-center gap-2 mb-6 mt-6">
-          <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-          <h3 className="text-lg font-medium">Why Choose Us</h3>
-        </div>
-        <div className="flex flex-col items-center mb-5">
-          <h1 className="w-96 text-center text-3xl leading-12 font-bold pb-4">
-            Experience Product the Way It's Meant to Be
-          </h1>
-          <p className="w-full md:w-1/2 text-center text-lg text-gray-500 font-medium pb-4">
-            Experience exceptional quality, expert guidance, and customer
-            service that puts your satisfaction first every step of the way.
-          </p>
-        </div>
-        <div className="w-full bg-[#f2f2f2] flex flex-col md:flex-row gap-4 rounded-xl page-frame">
-          <div>
-            <div className="md:w-84 h-48 flex flex-col justify-center bg-white rounded-xl px-6 mb-4">
-              <div className="w-7 h-7 bg-gray-200 rounded-full"></div>
-              <h3 className="text-lg font-bold my-3">Curated Selection</h3>
-              <p className="text-md font-medium text-gray-500">
-                We test and choose only products that meet our quality standards
-              </p>
-            </div>
-            <div className="md:w-84 h-48 flex flex-col justify-center bg-white rounded-xl px-6">
-              <div className="w-7 h-7 bg-gray-200 rounded-full"></div>
-              <h3 className="text-lg font-bold my-3">Honest Advice</h3>
-              <p className="text-md font-medium text-gray-500">
-                We recommend what's right for you, not what costs the most
-              </p>
-            </div>
+      <section className="bg-white md:mt-10 pointer-events-none">
+        <div className="page-frame py-12">
+          {/* Section Header */}
+          <div className="flex items-center justify-center gap-2 mb-6">
+            <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+            <h3 className="text-lg font-medium">Why Choose Us</h3>
           </div>
-          <div className="w-96 rounded-xl shadow-sm"></div>
-          <div>
-            <div className="md:w-84 h-48 flex flex-col justify-center bg-white rounded-xl px-6 mb-4">
-              <div className="w-7 h-7 bg-gray-200 rounded-full"></div>
-              <h3 className="text-lg font-bold my-3">Full Support</h3>
-              <p className="text-md font-medium text-gray-500">
-                From setup guidance to technical support, we're here to help
-              </p>
+
+          <div className="flex flex-col items-center text-center mb-10">
+            <h1 className="max-w-xl text-3xl md:text-4xl font-bold leading-tight pb-4">
+              Experience Product the Way It's Meant to Be
+            </h1>
+            <p className="max-w-2xl text-lg text-gray-500 font-medium">
+              Experience exceptional quality, expert guidance, and customer
+              service that puts your satisfaction first every step of the way.
+            </p>
+          </div>
+
+          {/* Grid Section */}
+          <div className="bg-[#f2f2f2] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 rounded-xl p-6">
+            {/* Left Column */}
+            <div className="flex flex-col gap-6">
+              <FeatureCard
+                title="Curated Selection"
+                description="We test and choose only products that meet our quality standards"
+              />
+              <FeatureCard
+                title="Honest Advice"
+                description="We recommend what's right for you, not what costs the most"
+              />
             </div>
-            <div className="md:w-84 h-48 flex flex-col justify-center bg-white rounded-xl px-6">
-              <div className="w-7 h-7 bg-gray-200 rounded-full"></div>
-              <h3 className="text-lg font-bold my-3">Quality Warrenty</h3>
-              <p className="text-md font-medium text-gray-500">
-                30-days returns and full manufacturer Warranties on everything
-                we sell
-              </p>
+
+            {/* Center Highlight */}
+            <div className="rounded-xl bg-red-400 min-h-[300px] shadow-sm"></div>
+
+            {/* Right Column */}
+            <div className="flex flex-col gap-6">
+              <FeatureCard
+                title="Full Support"
+                description="From setup guidance to technical support, we're here to help"
+              />
+              <FeatureCard
+                title="Quality Warranty"
+                description="30-day returns and full manufacturer warranties on everything we sell"
+              />
             </div>
           </div>
         </div>
       </section>
+
       <section className="bg-white min-h-screen flex flex-col md:flex-row md:items-center page-frame">
         <div className="w-full h-full bg-[#f2f2f2] rounded-xl p-10">
           <div className="w-full h-96 bg-white rounded-xl"></div>

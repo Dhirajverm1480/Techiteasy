@@ -21,6 +21,15 @@ import UserImg from '../assets/icons/user.png'
 
 export const IconImg = {CashOnDel, CashOnDel2, CustomerSupport, DeliveryTruck, Heart, Heart_Fill, Rupee, Rupee1, Rupee2, Rupee3, Sync, Transfer, Cart, Close, Gears, LogIn, LogOut, Menu, SearchImg, UserImg}
 
+const floting = [
+  {id: 1, name: "Easy Returns Policy", icon: ""},
+  {id: 2, name: "Premium Quality Products", icon:''},
+  {id: 3, name: "Expert Guidance", icon: ''},
+  {id: 4, name: "Fast Reliable Shipping", icon: ''},
+  {id: 5, name: "Secure Payment Options", icon: ''},
+  {id: 6, name: "24/7 Customer Support", icon: ''},
+  {id: 7, name: "10M + Delivered", icon: ''}
+]
 
 const reviews = [
   {
