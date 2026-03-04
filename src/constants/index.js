@@ -21,7 +21,7 @@ import UserImg from '../assets/icons/user.png'
 
 export const IconImg = {CashOnDel, CashOnDel2, CustomerSupport, DeliveryTruck, Heart, Heart_Fill, Rupee, Rupee1, Rupee2, Rupee3, Sync, Transfer, Cart, Close, Gears, LogIn, LogOut, Menu, SearchImg, UserImg}
 
-const floting = [
+const linearSlide = [
   {id: 1, name: "Easy Returns Policy", icon: ""},
   {id: 2, name: "Premium Quality Products", icon:''},
   {id: 3, name: "Expert Guidance", icon: ''},
@@ -82,4 +82,4 @@ const reviews = [
   }
 ];
 
-export {reviews}
+export {reviews, linearSlide }

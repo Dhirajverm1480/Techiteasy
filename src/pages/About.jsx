@@ -1,5 +1,6 @@
 import { FeatureCard } from "../components/FeatureCard";
 import { HeaderCard } from "../components/HeaderCard";
+import { linearSlide } from "../constants";
 
 const About = () => {
   return (
@@ -19,10 +20,21 @@ const About = () => {
           and books. We deliver quality products and exceptional service to
           lovers of gaming, technology, and reading.
         </p>
-        <div className="flex justify-center items-center my-5 py-3">
+        <div className="relative flex justify-center items-center my-5 py-3">
           <div className="w-96 h-96 shadow-2xl rounded-xl"></div>
+          <div className="absolute w-96 h-96 shadow-2xl rounded-xl"></div>
+          <div className="absolute w-96 h-96 shadow-2xl rounded-xl"></div>
         </div>
       </section>
+      <div className="overflow-hidden w-full my-3">
+        <div className="flex gap-20 py-5 animate-marquee whitespace-nowrap">
+          {[...linearSlide, ...linearSlide].map(({ name }, index) => (
+            <div key={index} className="shrink-0">
+              <span className="text-gray-400 text-lg font-medium">{name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
       <section className="bg-white md:mt-10 pointer-events-none">
         <div className="page-frame py-12">
           {/* Section Header */}
