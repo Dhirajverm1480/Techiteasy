@@ -3,7 +3,7 @@ import { HeaderCard } from "../components/HeaderCard";
 const Contact = () => {
   return (
     <section className="bg-[#f2f2f2] min-h-screen">
-      <HeaderCard />
+      <HeaderCard title={"Contact Us"} path={"about"} pathTitle={"About"} />
       <section className="flex flex-col md:flex-row justify-between gap-10 page-frame md:mt-10">
         <div className="w-[40%] flex flex-col justify-between bg-white rounded-md shadow-xs page-frame">
           <div className="mb-[20%] mt-3 md:mb-0">
