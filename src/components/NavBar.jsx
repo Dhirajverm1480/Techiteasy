@@ -37,7 +37,7 @@ const NavBar = () => {
               to={link.path}
               className={({ isActive }) => (isActive ? "text-orange-500" : "")}
             >
-              <p>{link.label}</p>
+              <p className="hover:text-orange-500">{link.label}</p>
             </NavLink>
           ))}
         </ul>

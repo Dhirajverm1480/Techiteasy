@@ -1,5 +1,6 @@
 import { FeatureCard } from "../components/FeatureCard";
 import { HeaderCard } from "../components/HeaderCard";
+import { StoreCard } from "../components/StoreCard";
 import { linearSlide } from "../constants";
 
 const About = () => {
@@ -35,7 +36,7 @@ const About = () => {
           ))}
         </div>
       </div>
-      <section className="bg-white md:mt-10 pointer-events-none">
+      <section className="bg-white md:mt-10 pb-14 pointer-events-none">
         <div className="page-frame py-12">
           {/* Section Header */}
           <div className="flex items-center justify-center gap-2 mb-6">
@@ -84,6 +85,7 @@ const About = () => {
           </div>
         </div>
       </section>
+      <StoreCard />
 
       <section className="bg-white min-h-screen flex flex-col md:flex-row md:items-center page-frame">
         <div className="w-full h-full bg-[#f2f2f2] rounded-xl p-10">
