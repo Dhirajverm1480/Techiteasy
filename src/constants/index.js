@@ -23,6 +23,7 @@ import ShowRoom_Day from '../assets/img/showroom-day.webp';
 import ShowRoom_Night from '../assets/img/showroom-night.webp';
 import Contact_Img from '../assets/contact_img.webp';
 import Owner_Img from '../assets/img/Owner.jpg';
+import ShopSection from '../assets/img/shopSection.webp'
 
 import People_1 from '../assets/people/people_1.webp'
 import People_2 from '../assets/people/people_2.webp'
@@ -32,7 +33,7 @@ import People_5 from '../assets/people/people_5.webp'
 
 export const IconImg = { CashOnDel, CashOnDel2, CustomerSupport, DeliveryTruck, Heart, Heart_Fill, Rupee, Rupee1, Rupee2, Rupee3, Sync, Transfer, Cart, Close, Gears, LogIn, LogOut, Menu, SearchImg, UserImg }
 
-export const Img = { ShowRoom_Day, ShowRoom_Night, Contact_Img, Owner_Img }
+export const Img = { ShowRoom_Day, ShowRoom_Night, Contact_Img, Owner_Img, ShopSection }
 export const PeopleImg = {People_1, People_2, People_3, People_4, People_5}
 
 const linearSlide = [
