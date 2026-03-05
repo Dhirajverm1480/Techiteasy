@@ -72,7 +72,7 @@ const About = () => {
             <div className="rounded-xl bg-red-400 min-h-[300px] shadow-sm"></div>
 
             {/* Right Column */}
-            <div className="flex flex-col gap-6">
+            <div className="md:col-span-2 lg:col-span-1 flex flex-col md:flex-row lg:flex-col gap-6">
               <FeatureCard
                 title="Full Support"
                 description="From setup guidance to technical support, we're here to help"

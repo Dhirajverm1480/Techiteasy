@@ -6,7 +6,7 @@ import Heart from '../assets/icons/heart.png';
 import Heart_Fill from '../assets/icons/heart-fill.png'
 import Rupee from '../assets/icons/rupee.png';
 import Rupee1 from '../assets/icons/rupee-1.png';
-import Rupee2 from  '../assets/icons/rupee-2.png';
+import Rupee2 from '../assets/icons/rupee-2.png';
 import Rupee3 from '../assets/icons/rupee-3.png';
 import Sync from '../assets/icons/sync.png';
 import Transfer from '../assets/icons/transfer.png'
@@ -24,18 +24,25 @@ import ShowRoom_Night from '../assets/img/showroom-night.webp';
 import Contact_Img from '../assets/contact_img.webp';
 import Owner_Img from '../assets/img/Owner.jpg';
 
-export const IconImg = {CashOnDel, CashOnDel2, CustomerSupport, DeliveryTruck, Heart, Heart_Fill, Rupee, Rupee1, Rupee2, Rupee3, Sync, Transfer, Cart, Close, Gears, LogIn, LogOut, Menu, SearchImg, UserImg}
+import People_1 from '../assets/people/people_1.webp'
+import People_2 from '../assets/people/people_2.webp'
+import People_3 from '../assets/people/people_3.webp'
+import People_4 from '../assets/people/people_4.webp'
+import People_5 from '../assets/people/people_5.webp'
 
-export const Img = {ShowRoom_Day, ShowRoom_Night, Contact_Img, Owner_Img}
+export const IconImg = { CashOnDel, CashOnDel2, CustomerSupport, DeliveryTruck, Heart, Heart_Fill, Rupee, Rupee1, Rupee2, Rupee3, Sync, Transfer, Cart, Close, Gears, LogIn, LogOut, Menu, SearchImg, UserImg }
+
+export const Img = { ShowRoom_Day, ShowRoom_Night, Contact_Img, Owner_Img }
+export const PeopleImg = {People_1, People_2, People_3, People_4, People_5}
 
 const linearSlide = [
-  {id: 1, name: "Easy Returns Policy", icon: ""},
-  {id: 2, name: "Premium Quality Products", icon:''},
-  {id: 3, name: "Expert Guidance", icon: ''},
-  {id: 4, name: "Fast Reliable Shipping", icon: ''},
-  {id: 5, name: "Secure Payment Options", icon: ''},
-  {id: 6, name: "24/7 Customer Support", icon: ''},
-  {id: 7, name: "10M + Delivered", icon: ''}
+  { id: 1, name: "Easy Returns Policy", icon: "" },
+  { id: 2, name: "Premium Quality Products", icon: '' },
+  { id: 3, name: "Expert Guidance", icon: '' },
+  { id: 4, name: "Fast Reliable Shipping", icon: '' },
+  { id: 5, name: "Secure Payment Options", icon: '' },
+  { id: 6, name: "24/7 Customer Support", icon: '' },
+  { id: 7, name: "10M + Delivered", icon: '' }
 ]
 
 const reviews = [
@@ -89,4 +96,42 @@ const reviews = [
   }
 ];
 
-export {reviews, linearSlide }
+const webPageReviews = [
+  {
+    id: 1,
+    name: "Alice Johnson",
+    img: People_1,
+    rating: 5,
+    comment: "TechItEasy has completely transformed my online shopping experience. The website is super fast, easy to navigate, and the product recommendations feel personalized. I especially love the seamless checkout process and the variety of payment options. Highly recommended for anyone who wants a hassle-free e-commerce experience."
+  },
+  {
+    id: 2,
+    name: "Michael Smith",
+    img: People_2,
+    rating: 4,
+    comment: "Overall, I am very happy with TechItEasy. The app loads quickly and the product search is accurate. I did face a minor issue with tracking my orders, but customer support responded promptly and resolved it. I love the user-friendly interface and the detailed product descriptions."
+  },
+  {
+    id: 3,
+    name: "Samantha Lee",
+    img: People_3,
+    rating: 3,
+    comment: "TechItEasy is a decent e-commerce platform. I like the design and product range, but sometimes the website is a bit slow during peak hours. The checkout process is smooth, but I hope they add more promotional offers and loyalty rewards for frequent shoppers."
+  },
+  {
+    id: 4,
+    name: "David Wilson",
+    img: People_4,
+    rating: 5,
+    comment: "Absolutely love TechItEasy! The interface is clean and intuitive, making it easy to find what I need. I ordered electronics and received them faster than expected. Customer service is excellent and very responsive. This app makes online shopping truly convenient and enjoyable."
+  },
+  {
+    id: 5,
+    name: "Priya Sharma",
+    img: "https://randomuser.me/api/portraits/women/63.jpg",
+    rating: 4,
+    comment: "TechItEasy offers a great shopping experience. The variety of products is impressive, and the images and descriptions are accurate. Occasionally, the website lags on mobile devices, but otherwise it’s smooth. I appreciate the secure payment system and fast delivery."
+  }
+];
+
+export { reviews, linearSlide, webPageReviews }
