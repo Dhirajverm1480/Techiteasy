@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 export const HeaderCard = ({image, title, path, pathTitle}) => {
   return (
-    <div className="relative min-h-screen md:min-h-96">
+    <div className="relative min-h-[450px] md:min-h-96">
       <div className="absolute inset-0 sm:-top-14">
         <img
           src={Contact_Img}
           alt="Contact_img"
-          className="w-full h-[438px] object-center object-top object-cover"
+          className="w-full h-full object-center object-top object-cover"
         />
       </div>
       <div className="absolute top-60 md:top-44  page-frame flex flex-col items-center md:items-start">

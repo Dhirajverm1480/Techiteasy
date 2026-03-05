@@ -11,7 +11,7 @@ export const StoreCard = () => {
         <h1 className="text-4xl font-bold mt-6 mb-12">
           Visit us at one of our locations nationwide
         </h1>
-        <div className="w-full h-80 rounded-xl overflow-hidden">
+        <div className="w-full h-80 mb-10 rounded-xl overflow-hidden">
           <img src={Img.ShowRoom_Day} alt="" />
         </div>
       </div>
