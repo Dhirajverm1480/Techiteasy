@@ -21,11 +21,12 @@ import UserImg from '../assets/icons/user.png'
 
 import ShowRoom_Day from '../assets/img/showroom-day.webp';
 import ShowRoom_Night from '../assets/img/showroom-night.webp';
-import Contact_Img from '../assets/contact_img.webp'
+import Contact_Img from '../assets/contact_img.webp';
+import Owner_Img from '../assets/img/Owner.jpg';
 
 export const IconImg = {CashOnDel, CashOnDel2, CustomerSupport, DeliveryTruck, Heart, Heart_Fill, Rupee, Rupee1, Rupee2, Rupee3, Sync, Transfer, Cart, Close, Gears, LogIn, LogOut, Menu, SearchImg, UserImg}
 
-export const Img = {ShowRoom_Day, ShowRoom_Night, Contact_Img}
+export const Img = {ShowRoom_Day, ShowRoom_Night, Contact_Img, Owner_Img}
 
 const linearSlide = [
   {id: 1, name: "Easy Returns Policy", icon: ""},

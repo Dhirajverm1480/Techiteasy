@@ -1,7 +1,7 @@
 import { FeatureCard } from "../components/FeatureCard";
 import { HeaderCard } from "../components/HeaderCard";
 import { StoreCard } from "../components/StoreCard";
-import { linearSlide } from "../constants";
+import { Img, linearSlide } from "../constants";
 
 const About = () => {
   return (
@@ -87,9 +87,11 @@ const About = () => {
       </section>
       <StoreCard />
 
-      <section className="bg-white min-h-screen flex flex-col md:flex-row md:items-center page-frame">
+      <section className="bg-white min-h-screen flex flex-col md:flex-row md:items-center page-frame pointer-events-none">
         <div className="w-full h-full bg-[#f2f2f2] rounded-xl p-10">
-          <div className="w-full h-96 bg-white rounded-xl"></div>
+          <div className="w-full h-96 bg-white rounded-xl overflow-hidden">
+            <img src={Img.Owner_Img} alt="" className="object-center" />
+          </div>
         </div>
         <div className="page-frame">
           <div className="flex items-center gap-2 mt-6 md:mt-0 mb-3">
