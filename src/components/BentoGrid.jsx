@@ -1,8 +1,7 @@
 export const BentoGrid = () => {
   return (
     <section className="mt-12 mb-8 px-[5%]">
-      <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-8 gap-4 auto-rows-[220px]">
-        {/* Large main video */}
+      <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-8 gap-4 auto-rows-auto md:auto-rows-[220px]">
         <div className="md:col-span-6 lg:col-span-4 md:row-span-2">
           <video
             src="https://framerusercontent.com/assets/kPVYFfkuZzRtO2tnXX2Lcb5MS8.mp4"
@@ -15,7 +14,6 @@ export const BentoGrid = () => {
         </div>
 
         <div className="md:col-span-3 lg:col-span-2 md:row-span-2 flex flex-col gap-4">
-          {/* Small video */}
           <div className="flex-1">
             <video
               src="https://framerusercontent.com/assets/qpr0DHIHWImApUJmTc2MJZQPM.mp4"
@@ -26,15 +24,11 @@ export const BentoGrid = () => {
               className="w-full h-full object-cover rounded-2xl"
             />
           </div>
-
-          {/* Content card */}
-          {/* <div className="md:col-span-3 lg:col-span-2 bg-red-500 rounded-2xl flex items-center justify-center text-white text-xl font-semibold">
-              Your Content
-            </div> */}
-          <div className="flex-1 w-full bg-orange-600 rounded-xl"></div>
+          <div className="h-40 md:flex-1 w-full bg-orange-600 rounded-xl">
+            <div></div>
+          </div>
         </div>
 
-        {/* Tall right video */}
         <div className="md:col-span-3 lg:col-span-2 md:row-span-2">
           <video
             src="https://framerusercontent.com/assets/d10TyCPywRtGk9729zm5H1yhoX4.mp4"

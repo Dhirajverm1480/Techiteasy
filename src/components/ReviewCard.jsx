@@ -15,8 +15,11 @@ export const ReviewCard = ({ id, userName, reviewDate, rating, comment }) => {
           <span>{reviewDate}</span>
         </div>
       </div>
-      <div className="my-3">
-        {"⭐".repeat(rating)}
+      <div className="my-3 flex">
+        {Array.from({ length: rating }).map((_, i) => (
+          <img key={i} src={IconImg.Star} alt="star" className="w-6 h-6" />
+        ))}
+        {/* {"⭐".repeat(rating)} */}
         {/* {[...Array(item.rating)].map((_, i) => (
                   <span key={i}>⭐</span>
                 ))} */}
@@ -66,7 +69,19 @@ export const ReviewForHome = () => {
           >
             <img src={img} alt="" className="w-full md:w-52 h-76 rounded-md" />
             <div className="bg-[#f2f2f2] px-5 rounded-lg py-2 h-76 overflow-hidden">
-              <div className="mb-2">{"⭐".repeat(rating)}</div>
+              <div className="mb-2 flex">
+                {/* {(
+                  <img src={IconImg.Star} alt="star" className="w-6 h-6" />
+                ).repeat(rating)} */}
+                {Array.from({ length: rating }).map((_, i) => (
+                  <img
+                    key={i}
+                    src={IconImg.Star}
+                    alt="star"
+                    className="w-6 h-6"
+                  />
+                ))}
+              </div>
               <h3 className="text-lg font-bold mb-2">{name}</h3>
               <p className="font-medium text-gray-500">{comment}</p>
             </div>

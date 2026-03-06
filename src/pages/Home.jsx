@@ -2,8 +2,6 @@ import { BentoGrid, BannerVid } from "../components/BentoGrid";
 import { Hero } from "../components/Hero";
 import ProductSections from "../components/ProductSections";
 import { ReviewForHome } from "../components/ReviewCard";
-import Title from "../components/Title";
-import { IconImg, webPageReviews } from "../constants";
 
 const Home = () => {
   return (
