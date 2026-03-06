@@ -52,7 +52,7 @@ export const BentoGrid = () => {
 
 export const BannerVid = () => {
   return (
-    <section className="relative mt-16 mb-10 px-[5%] lg:h-[540px] overflow-hidden">
+    <section className="relative mt-16 mb-10 px-[5%] h-96 lg:h-[540px] overflow-hidden">
       <video
         src="https://framerusercontent.com/assets/U2dGKks5Wh8AvI4wJnpft0oH24.mp4"
         autoPlay
@@ -61,7 +61,7 @@ export const BannerVid = () => {
         playsInline
         className="w-full h-full object-cover rounded-lg"
       />
-      <div className="absolute z-10 top-0 w-96 h-full text-white flex flex-col justify-center px-[5%]">
+      <div className="absolute z-10 top-0 md:w-96 h-full text-white flex flex-col justify-center px-[5%]">
         <p className="bg-white text-black text-md font-bold w-34 text-center px-2 py-1 rounded-lg mb-5">Weekend Offer</p>
         <h1 className="text-4xl font-bold mb-6">20% OFF</h1>
         <p className="font-bold">
