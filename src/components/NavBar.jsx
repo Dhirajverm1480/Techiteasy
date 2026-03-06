@@ -17,7 +17,7 @@ const NavBar = () => {
   const { setShowSearch, getCartCount, token, setToken, loading, user } =
     useContext(ShopContext);
 
-  console.log("User: ", user);
+  // console.log("User: ", user);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -37,7 +37,7 @@ const NavBar = () => {
               to={link.path}
               className={({ isActive }) => (isActive ? "text-orange-500" : "")}
             >
-              <p className="hover:text-orange-500">{link.label}</p>
+              <p className="hover:text-orange-500 transition-all hover:duration-1000 hover:delay-75">{link.label}</p>
             </NavLink>
           ))}
         </ul>
