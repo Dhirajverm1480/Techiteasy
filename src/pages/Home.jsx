@@ -1,8 +1,9 @@
 import { BentoGrid, BannerVid } from "../components/BentoGrid";
 import { Hero } from "../components/Hero";
 import ProductSections from "../components/ProductSections";
+import { ReviewForHome } from "../components/ReviewCard";
 import Title from "../components/Title";
-import { webPageReviews } from "../constants";
+import { IconImg, webPageReviews } from "../constants";
 
 const Home = () => {
   return (
@@ -44,25 +45,7 @@ const Home = () => {
       </section>
       <BentoGrid />
       <BannerVid />
-      {/* <section className="mt-10 px-[5%] py-10" >
-        <Title title={"CUSTOMERS REVIEWS"} />
-        <div className="flex py-5 flex-wrap md:flex-nowrap md:overflow-x-auto scrollbar-hide scroll-smooth">
-          {
-            webPageReviews.map(({id, img, rating, name, comment}) => (
-              <div key={id} className="w-full min-w-80 md:min-w-[540px] mb-2 mr-2 p-4 rounded-lg flex gap-3">
-                <img src={img} alt="" className="w-52 h-52 rounded-md" />
-                <div className="bg-[#f2f2f2] px-5 rounded-lg py-2 h-52 overflow-hidden">
-                  <div className="mb-2">
-                    {"⭐".repeat(rating)}
-                  </div>
-                  <h3 className="text-lg font-bold mb-2">{name}</h3>
-                  <p className="font-medium text-gray-500">{comment}</p>
-                </div>
-              </div>
-            ))
-          }
-        </div>
-      </section> */}
+      <ReviewForHome/>
     </>
   );
 };

@@ -18,6 +18,7 @@ import LogOut from '../assets/icons/log-out-regular-24.png';
 import Menu from '../assets/icons/menu.png';
 import SearchImg from '../assets/icons/search-regular-24.png';
 import UserImg from '../assets/icons/user.png'
+import Back_Arrow from '../assets/icons/back_arrow.png'
 
 import ShowRoom_Day from '../assets/img/showroom-day.webp';
 import ShowRoom_Night from '../assets/img/showroom-night.webp';
@@ -31,7 +32,7 @@ import People_3 from '../assets/people/people_3.webp'
 import People_4 from '../assets/people/people_4.webp'
 import People_5 from '../assets/people/people_5.webp'
 
-export const IconImg = { CashOnDel, CashOnDel2, CustomerSupport, DeliveryTruck, Heart, Heart_Fill, Rupee, Rupee1, Rupee2, Rupee3, Sync, Transfer, Cart, Close, Gears, LogIn, LogOut, Menu, SearchImg, UserImg }
+export const IconImg = { CashOnDel, CashOnDel2, CustomerSupport, DeliveryTruck, Heart, Heart_Fill, Rupee, Rupee1, Rupee2, Rupee3, Sync, Transfer, Cart, Close, Gears, LogIn, LogOut, Menu, SearchImg, UserImg, Back_Arrow }
 
 export const Img = { ShowRoom_Day, ShowRoom_Night, Contact_Img, Owner_Img, ShopSection }
 export const PeopleImg = {People_1, People_2, People_3, People_4, People_5}
@@ -107,14 +108,14 @@ const webPageReviews = [
   },
   {
     id: 2,
-    name: "Michael Smith",
+    name: "Samantha Lee",
     img: People_2,
     rating: 4,
     comment: "Overall, I am very happy with TechItEasy. The app loads quickly and the product search is accurate. I did face a minor issue with tracking my orders, but customer support responded promptly and resolved it. I love the user-friendly interface and the detailed product descriptions."
   },
   {
     id: 3,
-    name: "Samantha Lee",
+    name: "Michael Smith",
     img: People_3,
     rating: 3,
     comment: "TechItEasy is a decent e-commerce platform. I like the design and product range, but sometimes the website is a bit slow during peak hours. The checkout process is smooth, but I hope they add more promotional offers and loyalty rewards for frequent shoppers."
