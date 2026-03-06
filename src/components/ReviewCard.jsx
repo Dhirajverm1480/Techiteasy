@@ -17,7 +17,7 @@ export const ReviewCard = ({ id, userName, reviewDate, rating, comment }) => {
       </div>
       <div className="my-3 flex">
         {Array.from({ length: rating }).map((_, i) => (
-          <img key={i} src={IconImg.Star} alt="star" className="w-6 h-6" />
+          <img key={i} src={IconImg.Star_Icon} alt="star" className="w-6 h-6" />
         ))}
         {/* {"⭐".repeat(rating)} */}
         {/* {[...Array(item.rating)].map((_, i) => (
@@ -76,7 +76,7 @@ export const ReviewForHome = () => {
                 {Array.from({ length: rating }).map((_, i) => (
                   <img
                     key={i}
-                    src={IconImg.Star}
+                    src={IconImg.Star_Icon}
                     alt="star"
                     className="w-6 h-6"
                   />

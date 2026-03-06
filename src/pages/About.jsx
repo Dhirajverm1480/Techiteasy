@@ -1,7 +1,8 @@
+import { AnimatedCard } from "../components/AnimatedCard";
 import { FeatureCard } from "../components/FeatureCard";
 import { HeaderCard } from "../components/HeaderCard";
 import { StoreCard } from "../components/StoreCard";
-import { Img, linearSlide } from "../constants";
+import { IconImg, Img, linearSlide, PeopleImg } from "../constants";
 
 const About = () => {
   return (
@@ -21,11 +22,7 @@ const About = () => {
           and books. We deliver quality products and exceptional service to
           lovers of gaming, technology, and reading.
         </p>
-        <div className="relative flex justify-center items-center my-5 py-3">
-          <div className="w-96 h-96 shadow-2xl rounded-xl"></div>
-          <div className="absolute w-96 h-96 shadow-2xl rounded-xl"></div>
-          <div className="absolute w-96 h-96 shadow-2xl rounded-xl"></div>
-        </div>
+        <AnimatedCard />
       </section>
       <div className="overflow-hidden w-full my-3">
         <div className="flex gap-20 py-5 animate-marquee whitespace-nowrap">
@@ -59,25 +56,35 @@ const About = () => {
             {/* Left Column */}
             <div className="flex flex-col gap-6">
               <FeatureCard
+                icon={IconImg.Star_Icon}
+                altName={"Star"}
                 title="Curated Selection"
                 description="We test and choose only products that meet our quality standards"
               />
               <FeatureCard
+                icon={IconImg.Protection_Icon}
+                altName={"Protection"}
                 title="Honest Advice"
                 description="We recommend what's right for you, not what costs the most"
               />
             </div>
 
             {/* Center Highlight */}
-            <div className="rounded-xl bg-red-400 min-h-[300px] shadow-sm"></div>
+            <div className="rounded-xl bg-red-400 min-h-[300px] shadow-sm overflow-hidden">
+              <img src={PeopleImg.People_2} alt="" className="w-full h-full" />
+            </div>
 
             {/* Right Column */}
             <div className="md:col-span-2 lg:col-span-1 flex flex-col md:flex-row lg:flex-col gap-6">
               <FeatureCard
+                icon={IconImg.Headphone_Icon}
+                altName={"HeadPhone"}
                 title="Full Support"
                 description="From setup guidance to technical support, we're here to help"
               />
               <FeatureCard
+                icon={IconImg.Smile_Icon}
+                altName={"Smile"}
                 title="Quality Warranty"
                 description="30-day returns and full manufacturer warranties on everything we sell"
               />
@@ -86,10 +93,9 @@ const About = () => {
         </div>
       </section>
       <StoreCard />
-
       <section className="bg-white min-h-screen flex flex-col md:flex-row md:items-center page-frame pointer-events-none">
         <div className="w-full h-full bg-[#f2f2f2] rounded-xl p-10">
-          <div className="w-full h-96 bg-white rounded-xl overflow-hidden">
+          <div className="w-full h-48 md:h-96 bg-white rounded-xl overflow-hidden">
             <img src={Img.Owner_Img} alt="" className="object-center" />
           </div>
         </div>
