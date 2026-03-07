@@ -35,7 +35,7 @@ export const ReviewForHome = () => {
   const scrollRef = useRef(null);
 
   const scrollLeft = () => {
-    scrollRef.current.scrollBy({
+    scrollRef.current?.scrollBy({
       left: -scrollRef.current.clientWidth,
       behavior: "smooth",
     });
@@ -67,7 +67,7 @@ export const ReviewForHome = () => {
             key={id}
             className="w-full min-w-80 md:min-w-[560px] mb-2 mr-2 rounded-lg flex flex-col-reverse md:flex-row gap-3"
           >
-            <img src={img} alt="" className="w-full md:w-52 h-76 rounded-md" />
+            <img src={img} alt={name} className="w-full md:w-52 aspect-[3/4] object-cover rounded-md" />
             <div className="bg-[#f2f2f2] px-5 rounded-lg py-2 h-76 overflow-hidden">
               <div className="mb-2 flex">
                 {/* {(

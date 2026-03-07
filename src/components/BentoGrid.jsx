@@ -9,6 +9,7 @@ export const BentoGrid = () => {
             loop
             muted
             playsInline
+            preload="auto"
             className="w-full h-full object-cover rounded-2xl"
           />
           <OverLayText />
@@ -22,6 +23,7 @@ export const BentoGrid = () => {
               loop
               muted
               playsInline
+              preload="auto"
               className="w-full h-full object-cover rounded-2xl"
             />
             <OverLayText />
@@ -38,6 +40,7 @@ export const BentoGrid = () => {
             loop
             muted
             playsInline
+            preload="auto"
             className="w-full h-full object-cover rounded-2xl"
           />
           <OverLayText />
@@ -67,6 +70,7 @@ export const BannerVid = () => {
         loop
         muted
         playsInline
+        preload="auto"
         className="w-full h-full object-cover rounded-lg"
       />
       <div className="absolute z-10 top-0 md:w-96 h-full text-white flex flex-col justify-center px-[5%]">
