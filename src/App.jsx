@@ -13,6 +13,7 @@ import Orders from "./pages/Orders";
 import ScrollToTop from "./components/ScrollToTop";
 import WishList from "./pages/WishList";
 import Contact from "./pages/Contact";
+import Results from "./pages/results";
 
 export const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:8080";
 
@@ -38,6 +39,7 @@ const App = () => {
           <Route path="/order" element={<Orders />} />
           <Route path="/wish" element={<WishList/>} />
           <Route path="/contact" element={<Contact/>} />
+          <Route path="/results" element={<Results/>} />
           <Route path="*" element={<div>404 Page Not Found</div>} />
         </Routes>
       </main>
