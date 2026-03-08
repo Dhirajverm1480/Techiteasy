@@ -34,18 +34,19 @@ const Results = () => {
         <div className="w-72 h-96 border-r rounded-lg"></div>
         <section className="w-full">
           {searchProduct.length === 0 ? (
-            <section className="w-full min-h-screen flex justify-center items-center">
-              <p>{query} : Not Found</p>
+            <section className="w-full h-96 flex justify-center items-center">
+              <p className="animate-pulse text-4xl">{query} : Not Found</p>
             </section>
           ) : (
             <section>
-              {searchProduct.map(({ _id, image, title, price }) => (
+              {searchProduct.map(({ _id, image, title, price, tags }) => (
                 <SearchItems
                   key={_id}
                   id={_id}
                   image={image}
                   title={title}
                   price={price}
+                  tags={tags}
                 />
               ))}
             </section>
