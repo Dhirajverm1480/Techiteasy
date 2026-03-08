@@ -21,7 +21,7 @@ const Results = () => {
     }
   };
 
-  console.log("SearchData : ", searchProduct);
+  // console.log("SearchData : ", searchProduct);
 
   useEffect(() => {
     if (query) fetchSearchData();
@@ -31,7 +31,7 @@ const Results = () => {
     <div className="p-5 page-frame">
       <h1 className="text-2xl font-bold py-5">Results for : {query}</h1>
       <section className="flex gap-10 pt-10 border-t rounded-lg">
-        <div className="w-72 h-96 border-r rounded-lg"></div>
+        <div className="hidden md:block w-72 h-96 border-r rounded-lg"></div>
         <section className="w-full">
           {searchProduct.length === 0 ? (
             <section className="w-full h-96 flex justify-center items-center">
@@ -39,13 +39,14 @@ const Results = () => {
             </section>
           ) : (
             <section>
-              {searchProduct.map(({ _id, image, title, price, tags }) => (
+              {searchProduct.map(({ _id, image, title, price, tags, subtitle }) => (
                 <SearchItems
                   key={_id}
                   id={_id}
                   image={image}
                   title={title}
                   price={price}
+                  subtitle={subtitle}
                   tags={tags}
                 />
               ))}
