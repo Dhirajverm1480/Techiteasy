@@ -145,4 +145,12 @@ const webPageReviews = [
   }
 ];
 
-export { reviews, linearSlide, webPageReviews }
+const videoOverlayInfo = [
+  { id: 1, description: "Latest games are here. Buy and play Games ", icon: Game_Controller_Icon, alt:"Game" },
+  { id: 2, description: "Explore the latest gadgets", icon: Gadget_Icon, alt:"Gadget" },
+  { id: 3, description: "Read books to sharpen your mind", icon: Book_Icon, alt:"Book" },
+  { id: 4, description: "Experience music like never before", icon: Music_Note_Icon, alt:"Music_note" },
+  
+];
+
+export { reviews, linearSlide, webPageReviews, videoOverlayInfo }

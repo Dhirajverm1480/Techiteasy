@@ -1,3 +1,5 @@
+import { IconImg} from "../constants";
+
 export const BentoGrid = () => {
   return (
     <section className="mt-12 mb-8 px-[5%]">
@@ -12,7 +14,7 @@ export const BentoGrid = () => {
             preload="auto"
             className="w-full h-full object-cover rounded-2xl"
           />
-          <OverLayText />
+          <OverLayText description={"Latest games are here. Buy or Rent and Play"} icon={IconImg.Game_Controller_Icon} alt={"Game"} />
         </div>
 
         <div className="relative md:col-span-3 lg:col-span-2 md:row-span-2 flex flex-col gap-4">
@@ -26,10 +28,10 @@ export const BentoGrid = () => {
               preload="auto"
               className="w-full h-full object-cover rounded-2xl"
             />
-            <OverLayText />
+            <OverLayText description={"Explore the latest gadgets"} icon={IconImg.Gadget_Icon} alt={"Gadget"} />
           </div>
           <div className="relative h-40 md:flex-1 w-full bg-orange-600 rounded-xl">
-            <OverLayText />
+            <OverLayText description={"Read books to sharpen your mind"} icon={IconImg.Book_Icon} alt={"Book"} />
           </div>
         </div>
 
@@ -43,20 +45,20 @@ export const BentoGrid = () => {
             preload="auto"
             className="w-full h-full object-cover rounded-2xl"
           />
-          <OverLayText />
+          <OverLayText description={"Experience music like never before"} icon={IconImg.Music_Note_Icon} alt={"Music_note"} />
         </div>
       </div>
     </section>
   );
 };
 
-export const OverLayText = () => {
+export const OverLayText = ({description, icon, alt}) => {
   return (
-    <div className="absolute w-full md:w-64 bottom-10 left-5 text-white">
-      <div className="w-14 h-14 border rounded-full"></div>
-      <h4 className="text-md font-bold">
-        Hear every detail in your favoraite game like never before
-      </h4>
+    <div className="absolute w-full md:w-64 bottom-10 px-3 text-white">
+      <div className="w-10 h-10 mb-2 rounded-full">
+        <img src={icon} alt={alt} />
+      </div>
+      <h4 className="text-md font-bold">{description}</h4>
     </div>
   );
 };
