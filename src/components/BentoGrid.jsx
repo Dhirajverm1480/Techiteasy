@@ -54,7 +54,7 @@ export const BentoGrid = () => {
 
 export const OverLayText = ({description, icon, alt}) => {
   return (
-    <div className="absolute w-full md:w-64 bottom-10 px-3 text-white">
+    <div className="absolute w-full md:w-64 bottom-10 px-3 ml-2 text-white">
       <div className="w-10 h-10 mb-2 rounded-full">
         <img src={icon} alt={alt} />
       </div>
@@ -73,7 +73,7 @@ export const BannerVid = () => {
         muted
         playsInline
         preload="auto"
-        className="w-full h-full object-cover rounded-lg"
+        className="w-full h-full object-cover rounded-lg bg-gray-200"
       />
       <div className="absolute z-10 top-0 md:w-96 h-full text-white flex flex-col justify-center px-[5%]">
         <p className="bg-white text-black text-md font-bold w-34 text-center px-2 py-1 rounded-lg mb-5">

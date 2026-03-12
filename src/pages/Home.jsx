@@ -3,12 +3,31 @@ import { Hero } from "../components/Hero";
 import ProductSections from "../components/ProductSections";
 import { ReviewForHome } from "../components/ReviewCard";
 
+export const HomeButtons = () => {
+  return (
+    <div className="my-6">
+      <a
+        href="#"
+        className="w-full border rounded p-3 mr-3 font-bold hover:bg-black hover:text-white"
+      >
+        Shop Now
+      </a>
+      <a
+        href="#"
+        className="w-full rounded p-3 mr-3 bg-black text-white font-bold hover:bg-transparent hover:text-black hover:border"
+      >
+        Explore More
+      </a>
+    </div>
+  );
+};
+
 const Home = () => {
   return (
     <>
-      <section className="relative min-h-screen flex flex-col sm:flex-row justify-end sm:items-end bg-[#dddff8] -z-4 pb-[4%] sm:p-0">
+      <section className="relative min-h-screen flex flex-col sm:flex-row justify-end sm:items-end bg-[#dddff8] pb-[4%] sm:p-0">
         <Hero />
-        <div className="w-full sm:w-[60%] px-[4%] mb-[6%]">
+        <div className="relative z-10 w-full sm:w-[60%] px-[4%] mb-[6%]">
           <header>
             <h1 className="text-3xl sm:text-6xl font-bold">
               Tech for Every Mind That Loves to Level Up
@@ -21,21 +40,8 @@ const Home = () => {
             </p>
           </header>
         </div>
-        <div className="w-full sm:w-[40%] mb-[8%] px-[4%] flex sm:justify-end">
-          <div className="my-6">
-            <a
-              href="#"
-              className="w-full border rounded p-3 mr-3 font-bold hover:bg-black hover:text-white cursor-pointer"
-            >
-              Shop Now
-            </a>
-            <a
-              href="#"
-              className="w-full rounded p-3 mr-3 bg-black text-white font-bold hover:bg-transparent hover:text-black"
-            >
-              Explore More
-            </a>
-          </div>
+        <div className="relative z-10 w-full sm:w-[40%] mb-[8%] px-[4%] flex sm:justify-end">
+          <HomeButtons />
         </div>
       </section>
       <section className="mt-10 px-[4%]">
@@ -43,7 +49,7 @@ const Home = () => {
       </section>
       <BentoGrid />
       <BannerVid />
-      <ReviewForHome/>
+      <ReviewForHome />
     </>
   );
 };

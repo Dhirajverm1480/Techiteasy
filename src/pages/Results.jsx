@@ -5,8 +5,8 @@ import { backendUrl } from "../App";
 import { SearchItems } from "../components/Items";
 
 const Results = () => {
-  const [searchPramas] = useSearchParams();
-  const query = searchPramas.get("query");
+  const [searchParams] = useSearchParams();
+  const query = searchParams.get("query");
   const [searchProduct, setSearchProduct] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -29,14 +29,14 @@ const Results = () => {
 
   useEffect(() => {
     if (query) fetchSearchData();
-    setLoading(false);
+    // setLoading(false);
   }, [query]);
 
   return (
     <div className="p-5 page-frame">
       <h1 className="text-2xl font-bold py-5">Results for : {query}</h1>
-      <section className="flex gap-10 pt-10 border-t rounded-lg">
-        <div className="hidden md:block w-72 h-96 border-r rounded-lg"></div>
+      <section className="flex gap-10 pt-10 rounded-lg">
+        {/* <div className="hidden md:block w-72 h-96 border-r rounded-lg"></div> */}
         <section className="w-full">
           {loading ? (
             <section className="w-full h-96 flex justify-center items-center">
