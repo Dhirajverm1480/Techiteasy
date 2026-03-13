@@ -28,6 +28,7 @@ import Star_Icon from '../assets/icons/star.png';
 import Protection_Icon from '../assets/icons/protection_icon.png';
 import Headphone_Icon from '../assets/icons/headphone_icon.png';
 import Smile_Icon from '../assets/icons/smile_icon.png';
+import Blank_Star from '../assets/icons/blank_star.png'
 
 import ShowRoom_Day from '../assets/img/showroom-day.webp';
 import ShowRoom_Night from '../assets/img/showroom-night.webp';
@@ -41,7 +42,7 @@ import People_3 from '../assets/people/people_3.webp';
 import People_4 from '../assets/people/people_4.webp';
 import People_5 from '../assets/people/people_5.webp';
 
-export const IconImg = { CashOnDel, CashOnDel2, CustomerSupport, DeliveryTruck, Heart, Heart_Fill, Rupee, Rupee1, Rupee2, Rupee3, Sync, Transfer, Cart, Close, Gears, LogIn, LogOut, Menu, SearchImg, UserImg, Back_Arrow, Star_Icon, Book_Icon, Gadget_Icon, Game_Controller_Icon, Like_Icon, Music_Note_Icon, Protection_Icon, Headphone_Icon, Smile_Icon }
+export const IconImg = { CashOnDel, CashOnDel2, CustomerSupport, DeliveryTruck, Heart, Heart_Fill, Rupee, Rupee1, Rupee2, Rupee3, Sync, Transfer, Cart, Close, Gears, LogIn, LogOut, Menu, SearchImg, UserImg, Back_Arrow, Star_Icon, Book_Icon, Gadget_Icon, Game_Controller_Icon, Like_Icon, Music_Note_Icon, Protection_Icon, Headphone_Icon, Smile_Icon, Blank_Star }
 
 export const Img = { ShowRoom_Day, ShowRoom_Night, Contact_Img, Owner_Img, ShopSection }
 export const PeopleImg = { People_1, People_2, People_3, People_4, People_5 }

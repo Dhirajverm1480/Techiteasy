@@ -82,6 +82,11 @@ const ShopContextProvider = (props) => {
   }, []);
 
   const addToCart = async (itemId) => {
+    if(user === null) {
+      // alert("You are not log first logged | Register");
+      navigate('/login')
+    }
+    
     let cartData = structuredClone(cartItems);
 
     if (cartData[itemId]) {

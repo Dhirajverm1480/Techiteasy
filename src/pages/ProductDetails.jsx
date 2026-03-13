@@ -128,7 +128,7 @@ const Product = () => {
             >
               Add To Cart
             </button>
-            <button
+            {/* <button
               onClick={() => setHeartChange((prev) => !prev)}
               className="flex border py-2 px-2 rounded shadow-md mt-1 cursor-pointer"
             >
@@ -145,7 +145,7 @@ const Product = () => {
                   className="w-9 h-7"
                 />
               )}
-            </button>
+            </button> */}
           </div>
           {/* <hr className="mt-8 sm:w-4/5 " /> */}
           <div className="bg-[#f2f2f2] px-4 rounded-lg mb-6 shadow-md">
@@ -213,6 +213,13 @@ const Product = () => {
             action=""
             className="py-2 px-4"
           >
+            {/* <div>
+              <input type="radio" name="" id="" />
+              <input type="radio" name="" id="" />
+              <input type="radio" name="" id="" />
+              <input type="radio" name="" id="" />
+              <input type="radio" name="" id="" />
+            </div> */}
             <input
               type="number"
               min={1}
