@@ -35,9 +35,9 @@ const Product = () => {
   const onSubmitNewReviewByUser = async (e) => {
     e.preventDefault();
     try {
-      if(!user){
-        alert("User is not logged")
-        navigate("/login")
+      if (!user) {
+        alert("User is not logged");
+        navigate("/login");
       }
 
       const response = await axios.post(
@@ -56,7 +56,7 @@ const Product = () => {
       setComment("");
       setVisible(false);
 
-       window.location.reload();
+      window.location.reload();
     } catch (error) {
       console.log("Reviews Err : ", error);
     }
@@ -128,9 +128,9 @@ const Product = () => {
             >
               Add To Cart
             </button>
-            {/* <button
+            <button
               onClick={() => setHeartChange((prev) => !prev)}
-              className="flex border py-2 px-2 rounded shadow-md mt-1 cursor-pointer"
+              className="hidden flex border py-2 px-2 rounded shadow-md mt-1 cursor-pointer"
             >
               {heartChange ? (
                 <img
@@ -145,17 +145,24 @@ const Product = () => {
                   className="w-9 h-7"
                 />
               )}
-            </button> */}
+            </button>
           </div>
           {/* <hr className="mt-8 sm:w-4/5 " /> */}
           <div className="bg-[#f2f2f2] px-4 rounded-lg mb-6 shadow-md">
-            <div className="py-3">
+            <div className="flex gap-2 py-3">
+              <img
+                src={IconImg.DeliveryTruck}
+                width={40}
+                height={40}
+                alt="DeliveryTruck"
+              />
               <Subtitle
                 subtitle={"No extra costs at checkout, delivered to your door."}
               />
             </div>
             <hr />
-            <div className="py-3">
+            <div className="flex gap-3 py-3">
+              <img src={IconImg.Circle_Checkmark} width={30} height={30} alt="CheckMark" />
               <Subtitle subtitle={"Not Satisfied? Full refund, no hassle."} />
             </div>
           </div>

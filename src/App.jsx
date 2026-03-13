@@ -4,6 +4,8 @@ import ScrollToTop from "./components/ScrollToTop";
 import { lazy, Suspense } from "react";
 import SearchBar from "./components/SearchBar";
 import Footer from "./components/Footer";
+import gsap from "gsap";
+import { ScrollTrigger, SplitText } from "gsap/all";
 
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -16,6 +18,8 @@ const Orders = lazy(() => import("./pages/Orders"));
 const WishList = lazy(() => import("./pages/WishList"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Results = lazy(() => import("./pages/results"));
+
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 export const backendUrl =
   import.meta.env.VITE_BACKEND_URL || "http://localhost:8080";

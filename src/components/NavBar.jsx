@@ -1,8 +1,11 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 // import Icon from "../assets/Icon.webp";
 import { useContext, useState } from "react";
 import { ShopContext } from "../contexts/ShopContext";
 import { IconImg } from "../constants";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
 const navLinks = [
   { id: 1, path: "/", label: "Home" },
@@ -27,8 +30,37 @@ const NavBar = () => {
 
   if (loading) return null;
 
+  const location = useLocation()
+
+  useGSAP(() => {
+    gsap.set('#header', {
+      backgroundColor: "transparent", backdropFilter: "blur(0px)",
+      boxShadow: "0 0 0 rgba(0,0,0,0)",
+    })
+
+    const trigger = ScrollTrigger.create({
+      trigger: document.body,
+      start: "top -80",
+      onEnter: () => gsap.to("#header", {
+        backgroundColor: "#ffffff",
+        backdropFilter: "blur(10px)",
+        boxShadow: "0 4px 15px rgba(0,0,0,0)",
+        duration: 0.7,
+        ease: "power1.out",
+      }),
+      onLeaveBack: () => gsap.to("#header", {
+        backgroundColor: "transparent",
+        backdropFilter: "blur(0px)",
+        boxShadow: "0 0 0 rgba(0,0,0,0)",
+        duration: 0.7,
+        ease: "power1.out",
+      })
+    })
+    return () => trigger.kill()
+  }, [location.pathname])
+
   return (
-    <header className="sticky top-0 z-50 px-[4%]">
+    <header id="header" className="sticky top-0 z-50 px-[4%]">
       <div className="flex justify-between items-center px-3 py-2">
         <ul className="hidden sm:flex gap-5 text-sm">
           {navLinks.map((link) => (
