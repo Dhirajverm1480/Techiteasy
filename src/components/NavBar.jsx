@@ -98,8 +98,10 @@ const NavBar = () => {
               <div>
                 <div
                   onClick={() => setShowBox((prev) => !prev)}
-                  className="w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
-                />
+                  className="w-8 h-8 flex justify-center items-center bg-gray-200 rounded-full cursor-pointer"
+                >
+                  <p className="font-medium">{user.name.slice(0,2)?.toUpperCase()}</p>
+                </div>
                 <div className="relative">
                   <div
                     className={`absolute right-0 transition-all duration-200 w-36 my-3 rounded-md p-3 shadow-md bg-white ${
@@ -109,9 +111,9 @@ const NavBar = () => {
                     <p onClick={handleLogout} className="px-2 pb-1 text-lg">
                       LogOut
                     </p>
-                    <p className="px-2 text-lg">theme</p>
+                    {/* <p className="px-2 text-lg">theme</p>
                     <p className="px-2"></p>
-                    <p className="px-2"></p>
+                    <p className="px-2"></p> */}
                   </div>
                 </div>
               </div>

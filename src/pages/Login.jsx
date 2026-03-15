@@ -41,7 +41,7 @@ const Login = () => {
           },
           { withCredentials: true },
         );
-        console.log("Login Response: ", response.data);
+        // console.log("Login Response: ", response.data);
         if (response.data.success) {
           const accessToken = response.data.data.accessToken;
           // setToken(response.data.token);
